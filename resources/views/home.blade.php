@@ -16,6 +16,7 @@
 
                     You are logged in!
                     napravljena je promjena
+                    još jedna promjena napravljena za test
                 </div>
             </div>
         </div>
