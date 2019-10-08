@@ -15,6 +15,7 @@
                     @endif
 
                     You are logged in!
+                    napravljena je promjena
                 </div>
             </div>
         </div>
