@@ -13,8 +13,15 @@
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->middleware('check_role');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+//Admin stranice
+Route::prefix('admin')->middleware(['auth', 'check_role'])->group(function ()
+{   
+    Route::name('admin-home')->get('home', 'Admin\HomeController@index');
+});
