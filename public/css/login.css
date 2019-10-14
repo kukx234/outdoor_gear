@@ -34,14 +34,10 @@
     display: flex;
     justify-content: center;
 }
-.login-form a:last-child {
-    padding-bottom: 5px;
-}
 
 .login-box {
     padding: 4px 8px;
     background-color: #262626;
-    box-shadow: gray 2px 3px;
     border-radius: 4%;
     width: 400px;
 }
