@@ -18,10 +18,10 @@ class ProductTableMigration extends Migration
             $table->integer('price');
             $table->string('description');
             $table->string('title');
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->integer('sub_categories_id')->unsigned();
             $table->integer('categories_id')->unsigned();
-            $table->integer('product_actions_id')->unsigned();
+            $table->integer('product_actions_id')->unsigned()->nullable();
             $table->timestamps();
 
             $table->foreign('sub_categories_id')->references('id')->on('sub_categories');

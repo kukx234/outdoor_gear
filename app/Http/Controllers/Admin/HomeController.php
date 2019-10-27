@@ -9,7 +9,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        echo 'došlo  je do tu ';
-        die();
+        return view('Admin.home');
     }
+
 }

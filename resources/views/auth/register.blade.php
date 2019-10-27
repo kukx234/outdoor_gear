@@ -3,7 +3,8 @@
 @section('content')
 <div class="container">
     <div class="login-box">
-        <form class="login-form" action="" method="POST">
+        <form class="login-form" action="{{ route('register') }}" method="POST">
+            @csrf
             <h3>Register</h3>
 
             <div class="name">
@@ -22,7 +23,7 @@
                 <input type="password" name="confirm-password" id="confirm-password" placeholder="Confirm password">
             </div>
 
-            <a class="btn" type="submit">Register</a>
+            <button class="btn" type="submit" >Register</button>
 
         </form>
     </div>

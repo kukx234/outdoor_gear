@@ -3,7 +3,8 @@
 @section('content')
     <div class="container">
         <div class="login-box">
-            <form class="login-form" action="" method="POST">
+            <form class="login-form" action="{{ route('login') }}" method="POST">
+                @csrf
                 <h3>Login</h3>
 
                 <div class="email">
@@ -11,14 +12,14 @@
                 </div>
 
                 <div class="password">
-                    <input type="password" name="password" id="password" placeholder="Password">
+                    <input type="password" name="password" id="password" placeholder="Password" required>
                 </div>
 
-                <a class="btn" type="submit">Login</a>
+                <button class="btn" type="submit">Login</button>
 
                 <div class="login-links">
-                    <a href="#">Forgot your password?</a>
-                    <a href="#">Don't have account?</a>
+                    <a href={{ route('password.request') }}>Forgot your password?</a>
+                    <a href="{{ route('register') }}">Don't have account?</a>
                 </div>
 
             </form>
