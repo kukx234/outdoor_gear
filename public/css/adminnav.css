@@ -1,0 +1,130 @@
+
+body {
+    background-color: #333333;
+    font-family: 'Titillium Web', sans-serif;
+    margin: 0;
+}
+
+
+.first-nav {
+     display: flex;
+     flex-direction: row-reverse;
+     justify-content: space-between;
+     max-width: 1440px;
+     margin: 0 auto;
+     
+}
+
+.items li {
+    display: flex;
+    text-decoration: none;
+}
+
+.items{
+    padding: 10px 0;
+    margin: 0;
+}
+
+.items a,
+.app-name {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 300;
+    
+}
+
+.items a::first-letter {
+    text-transform: uppercase;
+}
+
+.app-name {
+   padding: 2px 15px;
+   margin: 10px 0px;
+}
+
+.items a {
+   padding: 2px 10px;
+   margin: 0 5px;
+
+}
+
+/* Underline Reveal */
+.first-nav a {
+    display: inline-block;
+    vertical-align: middle;
+    transform: perspective(1px) translateZ(0);
+    position: relative;
+    overflow: hidden;
+  }
+  .first-nav a:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+    height: 2px;
+    transform: translateY(4px);
+    transition-property: transform;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+  }
+  .first-nav a:hover:before, .first-nav a:focus:before, .first-nav a:active:before {
+    transform: translateY(0);
+  }
+
+
+
+.sec-nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    max-width: 1440px;
+    background-color: #2d5986;
+    margin: 0 auto;
+    border-radius: 24px;
+
+}
+
+.sec-nav li {
+    list-style: none;
+    padding: 15px 15px;
+    transform: perspective(1px) translateZ(0);
+    position: relative;
+    transition: color 0.5s;
+}
+
+.sec-nav a {
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+/* Bounce To Bottom */
+
+  .sec-nav li:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #2098D1;
+    transform: scaleY(0);
+    transform-origin: 50% 0;
+    transition-property: transform;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-out;
+  }
+  .sec-nav li:hover, .sec-nav li:focus, .sec-nav li:active {
+    color: white;
+  }
+  .sec-nav li:hover:before, .sec-nav li:focus:before, .sec-nav li:active:before {
+    transform: scaleY(1);
+    transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+  }
