@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Requests\ProductRequest;
 use App\Models\Product;
 use App\Models\Category;
 use App\Models\Sub_Category;
@@ -22,13 +23,19 @@ class ProductController extends Controller
         return view('Admin.products.new_product')->with('categories',Category::all());                            
     }
 
-    public function ajaxCategoryCall(Request $request)
+    public static function ajaxCategoryCall(Request $request)
     {
-        $category = Category::with('subCategory')->where('id', $request->id)->first();
-        return response()->json(['category' => $category]);
+        $category = Category::with('subCategory')->where('id', $request->category_id)->first();
+        return with(['category' => $category]);
     }
 
-    public function save(Request $request)
+    public static function validateCall(Request $request)
+    {
+        $category = Category::with('subCategory')->where('id', $request->category_id)->first();
+        return $category;
+    }
+
+    public function save(ProductRequest $request)
     {
         Product::insert([
             'price' => $request->price,

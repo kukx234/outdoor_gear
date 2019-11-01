@@ -1,7 +1,21 @@
 @extends('layouts.adminnav')
 
 @section('content')
+
+
+    @if ($errors->any())
+        <div class="">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
+
     <h1>Novi produkt</h1>
+
 
     <form action="{{ route('save_new_product') }}" method="POST">
         @csrf
@@ -22,7 +36,6 @@
             <option value="" selected>Odaberi podkategoriju.....</option>
         </select>
 
-
         <label for="description">Opis</label>
         <textarea name="description" id="description" cols="30" rows="10"></textarea>
 
@@ -30,12 +43,13 @@
         <input type="number" name="price" id="price">
 
         <label for="discount">Popust</label>
-        <input type="number" name="dicount" id="discount">
+        <input type="number" name="discount" id="discount">
 
         <button type="submit">Spremi</button>
         <a href="{{ route('products_list') }}">Odustani</a>
 
     </form>
+
 
     <script>
              $("#sub-category-select").hide();
@@ -45,8 +59,9 @@
                  $.ajax({
                      type:"GET",
                      url:"ajaxcategorycall",
-                     data: { id: category_id},
+                     data: { category_id: category_id},
                      success:function(data){
+                         console.log(data);
                          $("#sub-category-select").children().not(':first').remove();
                          if(data.category.sub_category.length > 0){
                              $("#sub-category-select").show();
@@ -62,4 +77,6 @@
              
              
          </script>    
+
+
 @endsection
