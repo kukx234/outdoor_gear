@@ -1,6 +1,8 @@
 @extends('layouts.adminnav')
 
 @section('content')
+
+@extends('Admin.validation_error')
     
     <h3>Unos nove podkategorije</h3>
 
@@ -10,6 +12,7 @@
         <input type="text" name="title" id="title">
 
         <select name="categoryId">
+            <option value="">Odaberite kategoriju ...</option>
             @foreach ($categories as $category)
                 <option value="{{ $category->id }}">{{ $category->title }}</option>
             @endforeach

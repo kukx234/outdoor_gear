@@ -2,6 +2,8 @@
 
 @section('content')
 
+@extends('Admin.validation_error')
+
 <h3>Unos nove kategorije</h3>
     
     <form action="{{ route('category-save') }}" method="POST">

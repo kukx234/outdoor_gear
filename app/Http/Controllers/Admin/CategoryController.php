@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Category;
+use App\Http\Requests\CategoryRequest;
 
 class CategoryController extends Controller
 {
@@ -20,7 +21,7 @@ class CategoryController extends Controller
         return view('Admin.categories.category_details')->with('category', $category);
     }
 
-    public function save(Request $request)
+    public function save(CategoryRequest $request)
     {
         Category::insert([
             'title' => $request->title,

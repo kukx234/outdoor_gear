@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Sub_Category;
 use App\Models\Category;
+use App\Http\Requests\SubCategoryRequest;
 
 class SubCategoryController extends Controller
 {
@@ -19,7 +20,7 @@ class SubCategoryController extends Controller
                                              ->with('category', $category);
     }*/
 
-    public function save(Request $request)
+    public function save(SubCategoryRequest $request)
     {
         Sub_Category::insert([
             'title' => $request->title,
