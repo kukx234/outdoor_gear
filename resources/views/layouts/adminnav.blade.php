@@ -19,35 +19,37 @@
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400&display=swap" rel="stylesheet">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/login.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('js/slick/slick.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/adminnav.css') }}"/>
+
 
 </head>
 <body> 
 
-    <nav>
-        <ul>
+    <nav class="first-nav">
+        <ul class="items">
             @guest
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                <li class="">
+                    <a class="" href="{{ route('login') }}">{{ __('Login') }}</a>
                 </li>
                 @if (Route::has('register'))
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                    <li class="">
+                        <a class="" href="{{ route('register') }}">{{ __('Register') }}</a>
                     </li>
                 @endif
             @else
-                <li class="nav-item dropdown">
-                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                <li class="">
+                    <a id="" class="" href="#" role="button">
                         {{ Auth::user()->name }} <span class="caret"></span>
                     </a>
 
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{ route('logout') }}"
+                    <div class="" aria-labelledby="navbarDropdown">
+                        <a class="" href="{{ route('logout') }}"
                            onclick="event.preventDefault();
                                          document.getElementById('logout-form').submit();">
                             {{ __('Logout') }}
@@ -60,14 +62,15 @@
                 </li>
             @endguest
         </ul>
-        <a href="{{ route('admin-home') }}">{{ config('app.name') }}</a>
+        <a class="app-name" href="{{ route('admin-home') }}">{{ config('app.name') }}</a>
     </nav>
-    <nav>
+
+    <nav class="sec-nav">
         <ul>
             <li><a href="{{ route('category_list') }}">Kategorije</a></li>
             <li><a href="{{ route('sub_category_list') }}">Podkategorije</a></li>
             <li><a href="{{ route('products_list') }}">Produkti</a></li>
-            <li><a href="">slke naslovnice</a></li>    
+            <li><a href="">slike naslovnice</a></li>    
         </ul>    
     </nav> 
     <main class="py-4">
