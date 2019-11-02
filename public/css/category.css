@@ -1,0 +1,79 @@
+.category {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 1440px;
+    height: 600px;
+    background-color: #fff;
+    position: relative;
+}
+.form-container {
+    border:3px solid #2d5986;
+    padding: 90px 70px;
+    box-shadow: -1px 4px 52px -5px rgba(0,0,0,0.7);
+}
+
+h3 {
+    text-align: center;
+}
+
+.section-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.section-form label {
+    padding: 5px 0;
+    font-size: 15px;
+}
+
+.section-form input {
+    width: 267px;
+    height: 30px;
+    border-radius: 10px;
+    border-color: #2d5986;
+    outline: none;
+    padding: 0 10px;
+}
+
+.buttons {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-around;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+.btn-save {
+    border: 2px solid #006600;
+    border-radius: 10px;
+    width: 100px;
+    padding: 6px 0;
+    background-color: #fff;
+    font-size: 15px; 
+}
+
+.btn-quit {
+    border: 2px solid #cc0000;
+    width: 100px;
+    padding: 6px 0;
+    border-radius: 10px;
+    background-color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+    text-align: center;
+    color: black;
+}
+
+.btn-save:hover {
+    background-color: #006600;
+    color: #fff;
+    font-weight: 600;
+}
+
+.btn-quit:hover {
+    background-color: #cc0000;
+    color: #fff;
+    font-weight: 600;
+}
