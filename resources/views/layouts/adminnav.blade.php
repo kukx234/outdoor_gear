@@ -20,13 +20,15 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/login.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('js/slick/slick.css') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/adminnav.css') }}"/>
-
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/category.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/validate-error.css') }}"/>
 
 </head>
 <body> 

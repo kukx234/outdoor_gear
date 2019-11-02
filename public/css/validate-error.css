@@ -1,0 +1,24 @@
+.show-error {
+    position: absolute;
+    right: 10px;
+    top: 0px;
+}
+
+.show-error ul {
+    padding: 0px;
+}
+
+.show-error li {
+    font-size: 22px;
+    list-style: none;
+    border: 2px solid #cc0000;
+    color: black;
+    padding: 10px 50px;
+    padding: 10px 0px;
+    width: 420px;
+}
+
+.show-error i {
+    color: #cc0000;
+    padding: 0 25px;
+}

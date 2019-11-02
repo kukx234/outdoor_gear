@@ -2,19 +2,27 @@
 
 @section('content')
 
-@extends('Admin.validation_error')
-
-<h3>Unos nove kategorije</h3>
+<div class="category">
     
-    <form action="{{ route('category-save') }}" method="POST">
+    @include('Admin.validation_error')
         
-        @csrf
-       <label for="title">Naziv kategorije</label>
-       <input type="text" name="title" id="title">
+    <div class="form-container">
 
-        <div>
-            <button type="submit">Spremi</button>
-            <a href="{{ route('category_list') }}">Odustani</a>
-        </div>
-    </form>
+    <h3>Unos nove kategorije</h3>
+        
+        <form class="section-form" action="{{ route('category-save') }}" method="POST">
+
+            @csrf
+        <label for="title">Naziv kategorije</label>
+        <input type="text" name="title" id="title">
+        
+
+            <div class="buttons">
+                <button class="btn-save" type="submit">Spremi</button>
+                <a class="btn-quit" href="{{ route('category_list') }}">Odustani</a>
+            </div>
+        </form>
+    </div>
+</div>
+
 @endsection
