@@ -48,4 +48,14 @@ class SubCategoryController extends Controller
         return redirect()->route('sub_category_list')->with('Success', 'Podkategorija uspješno obrisana');
     }
 
+    public function details(Request $request)
+    {
+        $sub_category = Sub_Category::with('product')->where('id', $request->id)->first();
+        $category = Category::where('id', $sub_category->categories_id)->first();
+
+        return view('Admin.sub_categories.sub_category_details')->with('category', $category)
+                                                                ->with('sub_category', $sub_category)
+                                                                ->with('products', $sub_category->product);
+    }
+
 }

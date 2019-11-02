@@ -19,7 +19,7 @@ class SubCategoriesTableMigration extends Migration
             $table->integer('categories_id')->unsigned();
             $table->timestamps();
 
-            $table->foreign('categories_id')->references('id')->on('categories');
+            $table->foreign('categories_id')->references('id')->on('categories')->onDelete('cascade');
         });
     }
 

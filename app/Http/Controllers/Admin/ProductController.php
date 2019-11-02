@@ -37,17 +37,46 @@ class ProductController extends Controller
 
     public function save(ProductRequest $request)
     {
+        $category_id = $request->category_id;
+        if($request->sub_category_id) {
+           $category_id = null;
+        }
+
         Product::insert([
             'price' => $request->price,
             'description' => $request->description,
             'title' => $request->title,
             'sub_categories_id' => $request->sub_category_id,
-            'categories_id' => $request->category_id,
+            'categories_id' => $category_id,
             'product_actions_id' => $request->discount,
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
         ]);
 
         return redirect()->route('products_list')->with("Success", 'Produkt uspješno dodan');
+    }
+
+    public function delete(Request $request)
+    {
+        Product::where('id', $request->id)->delete();
+
+        return redirect()->route('products_list');
+    }
+
+    public function details(Request $request)
+    {
+        $product = Product::where('id', $request->id)->first();
+        $sub_category = Sub_Category::where('id', $product->sub_categories_id)->first();
+
+        if($sub_category != null){
+            $category = Category::where('id', $sub_category->categories_id)->first();
+        }else {
+            $category = Category::where('id', $product->categories_id)->first();
+        }
+       
+
+        return view('Admin.products.product_details')->with('product', $product)
+                                                     ->with('category', $category)
+                                                     ->with('sub_category', $sub_category);
     }
 }

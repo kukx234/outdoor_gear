@@ -12,7 +12,8 @@
                     <span>{{ $product->title }}</span>
                     <span>{{ $product->categories_id }}</span>
                     <span>{{ $product->sub_categories_id }}</span>
-                    <a href="">Detalji</a>
+                    <a href="{{ route('product_details', $product->id) }}">Detalji</a>
+                    <a href="{{ route("product_delete" , $product->id) }}">Obriši</a>
                 </li>
             @endforeach
         </ul>

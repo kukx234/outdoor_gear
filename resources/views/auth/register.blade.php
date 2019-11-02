@@ -1,9 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
+
+@extends('Admin.validation_error')
+
 <div class="container">
     <div class="login-box">
-        <form class="login-form" action="{{ route('register') }}" method="POST">
+        <form  method="POST" action="{{ route('register') }}" class="login-form">
             @csrf
             <h3>Register</h3>
 
@@ -20,7 +23,7 @@
             </div>
 
             <div class="confirm-password">
-                <input type="password" name="confirm-password" id="confirm-password" placeholder="Confirm password">
+                <input type="password" name="password_confirmation" placeholder="Confirm password">
             </div>
 
             <button class="btn" type="submit" >Register</button>

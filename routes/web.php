@@ -37,11 +37,14 @@ Route::prefix('admin')->middleware(['auth', 'check_role'])->group(function ()
     Route::name('new_sub_category')->get('newsubcategory', 'Admin\SubCategoryController@newSubCategory');
     Route::name('sub_category_save')->post('subcategorysave', 'Admin\SubCategoryController@save');
     Route::name('sub_category_delete')->get('deletesubcategory/{id}', 'Admin\SubCategoryController@delete');
+    Route::name("sub_category_details")->get('subCategoryDetails/{id}', "Admin\SubCategoryController@details");
 
     //Produkti
     Route::name('products_list')->get('products', 'Admin\ProductController@allProducts');
     Route::name('new_product')->get('newProduct', 'Admin\ProductController@newProduct');
     Route::name('save_new_product')->post('newProduct', 'Admin\ProductController@save');
+    Route::name('product_delete')->get('productDelete/{id}', 'Admin\ProductController@delete');
+    Route::name('product_details')->get('productDetails/{id}', 'Admin\ProductController@details');
 
     Route::name('ajax-category-call')->get('ajaxcategorycall', 'Admin\ProductController@ajaxCategoryCall');
 });

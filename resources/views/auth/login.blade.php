@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+
+@extends('Admin.validation_error')
+
     <div class="container">
         <div class="login-box">
             <form class="login-form" action="{{ route('login') }}" method="POST">

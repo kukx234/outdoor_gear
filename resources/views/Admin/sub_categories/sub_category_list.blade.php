@@ -15,7 +15,7 @@
             @foreach ($sub_categories as $sub_category)
                 <li>
                     <span>{{ $sub_category->title }}</span>
-                    <a href="">Detalji</a>
+                    <a href="{{ route('sub_category_details', $sub_category->id) }}">Detalji</a>
                     <a href="{{ route('sub_category_delete', $sub_category->id) }}">Obriši</a>
                 </li>
             @endforeach

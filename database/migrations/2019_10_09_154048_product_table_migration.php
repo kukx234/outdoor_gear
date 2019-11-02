@@ -16,16 +16,16 @@ class ProductTableMigration extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('price');
-            $table->string('description');
+            $table->string('description')->nullable();
             $table->string('title');
             $table->string('image')->nullable();
-            $table->integer('sub_categories_id')->unsigned();
-            $table->integer('categories_id')->unsigned();
+            $table->integer('sub_categories_id')->unsigned()->nullable();
+            $table->integer('categories_id')->unsigned()->nullable();
             $table->integer('product_actions_id')->unsigned()->nullable();
             $table->timestamps();
 
-            $table->foreign('sub_categories_id')->references('id')->on('sub_categories');
-            $table->foreign('categories_id')->references('id')->on('categories');
+            $table->foreign('sub_categories_id')->references('id')->on('sub_categories')->onDelete('cascade');
+            $table->foreign('categories_id')->references('id')->on('categories')->onDelete('cascade');
             $table->foreign('product_actions_id')->references('id')->on('product_actions');
         });
     }

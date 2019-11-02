@@ -16,9 +16,10 @@ class CategoryController extends Controller
 
     public function categoryDetails(Request $request)
     {
-        $category = Category::where('id', $request->id)->first();
-        
-        return view('Admin.categories.category_details')->with('category', $category);
+        $category = Category::with(['product','subCategory'])->where('id', $request->id)->first();
+        return view('Admin.categories.category_details')->with('category', $category)
+                                                        ->with('sub_categories', $category->subCategory)
+                                                        ->with('products', $category->product);
     }
 
     public function save(CategoryRequest $request)

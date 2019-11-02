@@ -45,7 +45,7 @@
             @else
                 <li class="">
                     <a id="" class="" href="#" role="button">
-                        {{ Auth::user()->name }} <span class="caret"></span>
+                        {{ ucfirst(Auth::user()->name) }} <span class="caret"></span>
                     </a>
 
                     <div class="" aria-labelledby="navbarDropdown">
