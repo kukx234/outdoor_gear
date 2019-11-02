@@ -31,6 +31,9 @@ Route::prefix('admin')->middleware(['auth', 'check_role'])->group(function ()
     Route::name('category-save')->post('categorySave','Admin\CategoryController@save');
     Route::name('new-category')->get('newCategory', 'Admin\CategoryController@newCategory');
     Route::name('category-delete')->get('deleteCategory/{id}', 'Admin\CategoryController@deleteCategory');
+    Route::name('jebemtimater')->get('jebemtimater', function(){
+        return back();
+    });
 
     //Podkategorije
     Route::name('sub_category_list')->get('subcategories', 'Admin\SubCategoryController@allSubCategories');
@@ -47,4 +50,5 @@ Route::prefix('admin')->middleware(['auth', 'check_role'])->group(function ()
     Route::name('product_details')->get('productDetails/{id}', 'Admin\ProductController@details');
 
     Route::name('ajax-category-call')->get('ajaxcategorycall', 'Admin\ProductController@ajaxCategoryCall');
+
 });

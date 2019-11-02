@@ -1,6 +1,7 @@
 @extends('layouts.adminnav')
 
 @section('content')
+<div>
     <h1>{{ $category->title }}</h1>
 
     @if (!$sub_categories->isEmpty())
@@ -10,7 +11,7 @@
                 @foreach ($sub_categories as $sub_category)
                     <li>
                         {{ $sub_category->title }}
-                        <a href="">Detalji</a>
+                        <a href="{{ route('sub_category_details', $sub_category->id) }}">Detalji</a>
                         <a href="">Uredi</a>
                     </li>
                 @endforeach
@@ -32,6 +33,14 @@
             </ul>
         </div>
     @endif
-   
 
+    <button onclick="goBack()">Nazad</button>
+</div>
+
+<script>
+    function goBack() {
+      window.history.back();
+    }
+
+</script>
 @endsection

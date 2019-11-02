@@ -23,5 +23,12 @@
             </ul>
         </div> 
     @endif
+
+    <button onclick="goBack()">Nazad</button>
   
+    <script>
+        function goBack() {
+          window.history.back();
+        }
+    </script>
 @endsection

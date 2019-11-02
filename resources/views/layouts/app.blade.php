@@ -78,9 +78,9 @@
                     </ul>
 
                     @if (Auth::check())
-                    @if (Auth::user()->role->role === "Admin")
-                        <a href="{{ route('admin-home') }}">Administracija</a>
-                    @endif
+                        @if (Auth::user()->role->role === "Admin")
+                            <a href="{{ route('admin-home') }}">Administracija</a>
+                        @endif
                     @endif
                 </div>
             </div>
