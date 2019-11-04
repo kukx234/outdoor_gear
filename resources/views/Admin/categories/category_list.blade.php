@@ -15,9 +15,11 @@
             <li>
                 <span>{{ $category->title }}</span>
                 <a href="{{ route('category_details', $category->id ) }}">Detalji</a>
-                <a href="{{ route('category-delete', $category->id ) }}">Obriši</a>
+                <a href="{{ route('category_edit', $category->id) }}">Uredi</a>
+                <button id="test" onclick="popupAlert('categories/delete',{{ $category->id }})">Obriši</button>
             </li>
         @endforeach
     </ul>
-
+    @include('Admin.popup_warning')
 @endsection
+

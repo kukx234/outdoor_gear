@@ -67,16 +67,32 @@
         <a class="app-name" href="{{ route('admin-home') }}">{{ config('app.name') }}</a>
     </nav>
 
-    <nav class="sec-nav">
-        <ul>
-            <li><a href="{{ route('category_list') }}">Kategorije</a></li>
-            <li><a href="{{ route('sub_category_list') }}">Podkategorije</a></li>
-            <li><a href="{{ route('products_list') }}">Produkti</a></li>
-            <li><a href="">slike naslovnice</a></li>    
-        </ul>    
-    </nav> 
+    @if (Auth::check())
+        <nav class="sec-nav">
+            <ul>
+                <li class="cat"><a href="{{ route('category_list') }}">Kategorije</a></li>
+                <li class="subcat"><a href="{{ route('sub_category_list') }}">Podkategorije</a></li>
+                <li class="product"><a href="{{ route('products_list') }}">Produkti</a></li>
+                <li><a href="">slike naslovnice</a></li>    
+            </ul>    
+        </nav>     
+    @endif
+    
     <main class="py-4">
         @yield('content')
     </main>
+
+    <script>
+        if (window.location.href.indexOf("categories") > -1) {
+             $(".cat").addClass("current");
+        }
+        if (window.location.href.indexOf("subcategory") > -1) {
+            $(".subcat").addClass("current");
+        }
+        if (window.location.href.indexOf("product") > -1) {
+            $(".product").addClass("current");
+        }
+    </script>
+
 </body>
 </html>

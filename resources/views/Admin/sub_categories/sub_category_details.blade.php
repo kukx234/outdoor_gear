@@ -16,7 +16,7 @@
                 @foreach ($products as $product)
                     <li>
                         {{ $product->title }}
-                        <a href="">Detalji</a>
+                        <a href="{{ route('product_details', $product->id) }}">Detalji</a>
                         <a href="">Uredi</a>
                     </li>
                 @endforeach

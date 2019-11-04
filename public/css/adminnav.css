@@ -5,7 +5,6 @@ body {
     margin: 0;
 }
 
-
 .first-nav {
      display: flex;
      flex-direction: row-reverse;
@@ -114,7 +113,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: #2098D1;
+    background: #333333;
     transform: scaleY(0);
     transform-origin: 50% 0;
     transition-property: transform;
@@ -128,3 +127,8 @@ body {
     transform: scaleY(1);
     transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
   }
+
+  .current {
+    background-color: #333333;
+  }
+  

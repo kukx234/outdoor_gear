@@ -1,8 +1,6 @@
 @extends('layouts.adminnav')
 
 @section('content')
-
-@extends('Admin.validation_error')
     
     <h3>Unos nove podkategorije</h3>
 
@@ -21,5 +19,7 @@
         <button type="submit">Spremi</button>
         <a href="{{ route('sub_category_list') }}">Odustani</a>
     </form>
+
+@include('Admin.validation_error')
 
 @endsection

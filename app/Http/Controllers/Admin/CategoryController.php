@@ -48,4 +48,17 @@ class CategoryController extends Controller
         Category::where('id', $request->id)->delete();
         return redirect()->route('category_list')->with('Success', 'Kategorija uspješno pobrisana');
     }
+
+    public function editCategory(Request $request)
+    {
+        $category = Category::where('id', $request->id)->first();
+        return view('Admin.categories.category_edit')->with('category', $category);
+    }
+
+    public function editCategorySave(CategoryRequest $request)
+    {
+        Category::where('id', $request->id)->update(['title' => $request->title]);
+
+        return redirect()->route('category_list')->with("Success", "Kategorija uspiješno uređena");
+    }
 }

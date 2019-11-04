@@ -16,6 +16,7 @@
                 <li>
                     <span>{{ $sub_category->title }}</span>
                     <a href="{{ route('sub_category_details', $sub_category->id) }}">Detalji</a>
+                    <a href="{{ route('sub_category_edit', $sub_category->id) }}">Uredi</a>
                     <a href="{{ route('sub_category_delete', $sub_category->id) }}">Obriši</a>
                 </li>
             @endforeach

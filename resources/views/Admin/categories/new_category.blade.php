@@ -3,8 +3,6 @@
 @section('content')
 
 <div class="category">
-    
-    @include('Admin.validation_error')
         
     <div class="form-container">
 
@@ -23,6 +21,7 @@
             </div>
         </form>
     </div>
+    @include('Admin.validation_error')
 </div>
 
 @endsection

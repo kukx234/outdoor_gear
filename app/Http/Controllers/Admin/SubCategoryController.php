@@ -58,4 +58,13 @@ class SubCategoryController extends Controller
                                                                 ->with('products', $sub_category->product);
     }
 
+    public function edit(Request $request)
+    {
+        $sub_category = Sub_Category::where('id', $request->id)->first();
+        $categories = Category::all();
+        
+        return view('Admin.sub_categories.sub_category_edit')->with('sub_category', $sub_category)
+                                                             ->with('categories', $categories);
+    }
+
 }

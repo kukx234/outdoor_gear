@@ -1,8 +1,7 @@
-@extends('layouts.app')
+@extends('layouts.adminnav')
 
 @section('content')
-
-@extends('Admin.validation_error')
+@include('Admin.validation_error')
 
 <div class="container">
     <div class="login-box">
