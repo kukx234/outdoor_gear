@@ -1,0 +1,16 @@
+
+
+h2 {
+  color: #fff;
+  text-align: center;
+}
+
+.new-product {
+  padding: 50px 70px;
+  margin-top: 45px;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

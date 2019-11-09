@@ -11,7 +11,7 @@ body {
      justify-content: space-between;
      max-width: 1440px;
      margin: 0 auto;
-     
+
 }
 
 .items li {
@@ -22,6 +22,7 @@ body {
 .items{
     padding: 10px 0;
     margin: 0;
+    display: flex;
 }
 
 .items a,
@@ -30,7 +31,7 @@ body {
     color: #fff;
     font-size: 18px;
     font-weight: 300;
-    
+
 }
 
 .items a::first-letter {
@@ -131,4 +132,3 @@ body {
   .current {
     background-color: #333333;
   }
-  

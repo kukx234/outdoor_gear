@@ -12,13 +12,21 @@
     font-size: 22px;
     list-style: none;
     border: 2px solid #cc0000;
-    color: black;
+    background-color: #cc0000;
+    color: #fff;
     padding: 10px 50px;
     padding: 10px 0px;
     width: 420px;
+    text-align: center;
+    margin-bottom: 2px;
+    position: relative;
 }
 
 .show-error i {
-    color: #cc0000;
+    color: #fff;
     padding: 0 25px;
+    position: absolute;
+    left: 0;
+    bottom: 50%;
+    transform: translate(0%,50%);
 }
