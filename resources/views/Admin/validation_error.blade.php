@@ -1,6 +1,6 @@
 @if ($errors->any())
     <div class="show-error" id="test">
-        <ul>   
+        <ul>
             @foreach ($errors->all() as $error)
                <li>
                     <i class="fas fa-exclamation-triangle"></i>
@@ -15,7 +15,7 @@
 
     if($(".show-error").height()){
        setTimeout(function(){
-            $(".show-error").hide();
+            $(".show-error").remove();
         },8000);
     }
 

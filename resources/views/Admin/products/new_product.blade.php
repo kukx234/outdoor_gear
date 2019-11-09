@@ -2,12 +2,13 @@
 
 @section('content')
 
-@extends('Admin.validation_error')
+<div class="category">
+@include('Admin.validation_error')
+    <div class="form-container new-product">
 
-    <h1>Novi produkt</h1>
+    <h2>Novi produkt</h2>
 
-
-    <form action="{{ route('save_new_product') }}" method="POST">
+    <form  class="section-form" action="{{ route('save_new_product') }}" method="POST">
         @csrf
 
         <label for="title">Naziv produkta</label>
@@ -21,7 +22,7 @@
             @endforeach
         </select>
 
-        <label>Odabir podkategorije</label>
+        <label class="sublabel" >Odabir podkategorije</label>
         <select name="sub_category_id" id="sub-category-select">
             <option value="" selected>Odaberi podkategoriju.....</option>
         </select>
@@ -35,15 +36,20 @@
         <label for="discount">Popust</label>
         <input type="number" name="discount" id="discount">
 
-        <button type="submit">Spremi</button>
-        <a href="{{ route('products_list') }}">Odustani</a>
+
+      <div class="buttons">
+        <button class="btn-save" type="submit">Spremi</button>
+        <a class="btn-quit" href="{{ route('products_list') }}">Odustani</a>
+      </div>
 
     </form>
 
 
     <script>
              $("#sub-category-select").hide();
-     
+             $(".sublabel").hide();
+
+
              $("#category-select").change(function(){
                  var category_id = this.value;
                  $.ajax({
@@ -55,18 +61,20 @@
                          $("#sub-category-select").children().not(':first').remove();
                          if(data.category.sub_category.length > 0){
                              $("#sub-category-select").show();
+                             $(".sublabel").show();
                              $.each(data.category.sub_category, function(i, value){
                                  $("#sub-category-select").append(new Option(value.title,value.id));
                              });
                          }else{
                              $("#sub-category-select").hide();
+                             $(".sublabel").hide();
                          }
                      }
                  })
              });
-             
-             
-         </script>    
 
 
+         </script>
+    </div>
+</div>
 @endsection

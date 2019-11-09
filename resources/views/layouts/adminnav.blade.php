@@ -29,9 +29,13 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/adminnav.css') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/category.css') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/validate-error.css') }}"/>
-
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/forgotpassword.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/new_subcategory.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/new_product.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/category_list.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/popup_warning.css') }}"/>
 </head>
-<body> 
+<body>
 
     <nav class="first-nav">
         <ul class="items">
@@ -73,11 +77,11 @@
                 <li class="cat"><a href="{{ route('category_list') }}">Kategorije</a></li>
                 <li class="subcat"><a href="{{ route('sub_category_list') }}">Podkategorije</a></li>
                 <li class="product"><a href="{{ route('products_list') }}">Produkti</a></li>
-                <li><a href="">slike naslovnice</a></li>    
-            </ul>    
-        </nav>     
+                <li><a href="">slike naslovnice</a></li>
+            </ul>
+        </nav>
     @endif
-    
+
     <main class="py-4">
         @yield('content')
     </main>
