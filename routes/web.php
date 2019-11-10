@@ -22,7 +22,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //Admin stranice
 Route::prefix('admin')->middleware(['auth', 'check_role'])->group(function ()
-{   
+{
     Route::name('admin-home')->get('home', 'Admin\HomeController@index');
 
     //kategorije
@@ -30,7 +30,7 @@ Route::prefix('admin')->middleware(['auth', 'check_role'])->group(function ()
     Route::name('new-category')->get('categories/new', 'Admin\CategoryController@newCategory');
     Route::name('category_list')->get('categories', 'Admin\CategoryController@allCategories');
     Route::name('category_details')->get('categories/{id}', 'Admin\CategoryController@categoryDetails');
-    Route::name('category-delete')->get('categories/delete/{id}', 'Admin\CategoryController@deleteCategory');
+    Route::name('category-delete')->get('categoriesdelete', 'Admin\CategoryController@deleteCategory');
     Route::name('category_edit')->get('categories/edit/{id}', 'Admin\CategoryController@editCategory');
     Route::name('category_edit_save')->post('categories/edit/{id}', 'Admin\CategoryController@editCategorySave');
 
@@ -38,7 +38,7 @@ Route::prefix('admin')->middleware(['auth', 'check_role'])->group(function ()
     Route::name('sub_category_list')->get('subcategory', 'Admin\SubCategoryController@allSubCategories');
     Route::name('new_sub_category')->get('newsubcategory', 'Admin\SubCategoryController@newSubCategory');
     Route::name('sub_category_save')->post('subcategorysave', 'Admin\SubCategoryController@save');
-    Route::name('sub_category_delete')->get('deletesubcategory/{id}', 'Admin\SubCategoryController@delete');
+    Route::name('sub_category_delete')->get('deletesubcategory', 'Admin\SubCategoryController@delete');
     Route::name("sub_category_details")->get('subcategoryDetails/{id}', "Admin\SubCategoryController@details");
     Route::name('sub_category_edit')->get('subcategory/edit/{id}','Admin\SubCategoryController@edit');
 

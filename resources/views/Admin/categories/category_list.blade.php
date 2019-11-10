@@ -20,7 +20,7 @@
                   <div class="list-buttons">
                     <a href="{{ route('category_details', $category->id ) }}">Detalji</a>
                     <a href="{{ route('category_edit', $category->id) }}">Uredi</a>
-                    <button id="test" onclick="popupAlert('categories/delete',{{ $category->id }})">Obriši</button>
+                    <button class="delete" onclick="popupAlert('categoriesdelete',{{ $category->id }})">Obriši</button>
                   </div>
             </li>
         @endforeach
@@ -28,4 +28,5 @@
     </div>
     @include('Admin.popup_warning')
 </div>
+
 @endsection

@@ -29,7 +29,6 @@ class CategoryController extends Controller
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
         ]);
-        
         return redirect()->route("category_list")->with("Success", "Kategorija uspješno dodana");
     }
 
@@ -46,7 +45,9 @@ class CategoryController extends Controller
     public function deleteCategory(Request $request)
     {
         Category::where('id', $request->id)->delete();
-        return redirect()->route('category_list')->with('Success', 'Kategorija uspješno pobrisana');
+        return response()->json([
+          'success' => 'Record deleted successfully!'
+        ]);
     }
 
     public function editCategory(Request $request)

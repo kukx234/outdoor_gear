@@ -45,7 +45,9 @@ class SubCategoryController extends Controller
     public function delete(Request $request)
     {
         Sub_Category::where('id', $request->id)->delete();
-        return redirect()->route('sub_category_list')->with('Success', 'Podkategorija uspješno obrisana');
+        return response()->json([
+          'success' => 'Record deleted successfully!'
+        ]);
     }
 
     public function details(Request $request)
@@ -62,7 +64,7 @@ class SubCategoryController extends Controller
     {
         $sub_category = Sub_Category::where('id', $request->id)->first();
         $categories = Category::all();
-        
+
         return view('Admin.sub_categories.sub_category_edit')->with('sub_category', $sub_category)
                                                              ->with('categories', $categories);
     }
