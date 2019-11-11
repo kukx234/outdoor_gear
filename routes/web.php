@@ -41,13 +41,15 @@ Route::prefix('admin')->middleware(['auth', 'check_role'])->group(function ()
     Route::name('sub_category_delete')->get('deletesubcategory', 'Admin\SubCategoryController@delete');
     Route::name("sub_category_details")->get('subcategoryDetails/{id}', "Admin\SubCategoryController@details");
     Route::name('sub_category_edit')->get('subcategory/edit/{id}','Admin\SubCategoryController@edit');
+    Route::name('sub_edit_save')->post('subcategory/editsave/{id}','Admin\SubCategoryController@editSave');
 
     //Produkti
     Route::name('products_list')->get('product', 'Admin\ProductController@allProducts');
     Route::name('new_product')->get('newproduct', 'Admin\ProductController@newProduct');
     Route::name('save_new_product')->post('newproduct', 'Admin\ProductController@save');
-    Route::name('product_delete')->get('productDelete/{id}', 'Admin\ProductController@delete');
+    Route::name('product_delete')->get('productDelete', 'Admin\ProductController@delete');
     Route::name('product_details')->get('productDetails/{id}', 'Admin\ProductController@details');
+    Route::name('product_edit')->get('product/edit/{id}', 'Admin\ProductController@edit');
 
     Route::name('ajax-category-call')->get('ajaxcategorycall', 'Admin\ProductController@ajaxCategoryCall');
 

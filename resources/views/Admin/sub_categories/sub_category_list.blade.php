@@ -2,9 +2,7 @@
 
 @section('content')
 
-    @if (Session::has('Success'))
-        {{ Session::get('Success') }}
-    @endif
+@include('Admin.success_msg');
 
     <h1>Podkategorije</h1>
 
@@ -15,9 +13,11 @@
             @foreach ($sub_categories as $sub_category)
                 <li>
                     <span>{{ $sub_category->title }}</span>
-                    <a href="{{ route('sub_category_details', $sub_category->id) }}">Detalji</a>
-                    <a href="{{ route('sub_category_edit', $sub_category->id) }}">Uredi</a>
-                    <a class="delete" onclick="popupAlert('deletesubcategory',{{ $sub_category->id }})">Obriši</a>
+                    <div class="list-buttons">
+                        <a href="{{ route('sub_category_details', $sub_category->id) }}">Detalji</a>
+                        <a href="{{ route('sub_category_edit', $sub_category->id) }}">Uredi</a>
+                        <a class="delete" onclick="popupAlert('deletesubcategory',{{ $sub_category->id }})">Obriši</a>
+                    </div>
                 </li>
             @endforeach
         </ul>

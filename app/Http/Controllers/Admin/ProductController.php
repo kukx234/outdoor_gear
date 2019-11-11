@@ -23,12 +23,6 @@ class ProductController extends Controller
         return view('Admin.products.new_product')->with('categories',Category::all());                            
     }
 
-    public static function ajaxCategoryCall(Request $request)
-    {
-        $category = Category::with('subCategory')->where('id', $request->category_id)->first();
-        return with(['category' => $category]);
-    }
-
     public static function validateCall(Request $request)
     {
         $category = Category::with('subCategory')->where('id', $request->category_id)->first();
@@ -59,8 +53,6 @@ class ProductController extends Controller
     public function delete(Request $request)
     {
         Product::where('id', $request->id)->delete();
-
-        return redirect()->route('products_list');
     }
 
     public function details(Request $request)
@@ -78,5 +70,11 @@ class ProductController extends Controller
         return view('Admin.products.product_details')->with('product', $product)
                                                      ->with('category', $category)
                                                      ->with('sub_category', $sub_category);
+    }
+
+    public static function ajaxCategoryCall(Request $request)
+    {
+        $category = Category::with('subCategory')->where('id', $request->category_id)->first();
+        return with(['category' => $category]);
     }
 }
