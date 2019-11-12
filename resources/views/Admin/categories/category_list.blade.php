@@ -26,7 +26,6 @@
         @endforeach
     </ul>
     </div>
-    @include('Admin.popup_warning')
 </div>
-
+  @include('Admin.popup_warning')
 @endsection

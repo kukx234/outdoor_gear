@@ -134,15 +134,39 @@ h1 {
 .new-category-btn {
   padding: 9px 20px;
   color: #fff;
-  background-color: black;
-  border: 2px solid rgba(230,77,0,1);
+  border: 2px solid  #e6e600;
   border-radius: 24px;
   outline: none;
+  transform: perspective(1px) translateZ(0);
+  position: relative;
+  transition-property: color;
+  transition-duration: 0.3s;
   font-size: 17px;
 }
 
-.new-category-btn:hover {
-  color: black;
-  background-color: rgba(230,77,0,1);
-  transition: color, background-color 0.5s;
+.new-category-btn:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 19px;
+  background: #e6e600;
+  transform: scaleY(0);
+  transform-origin: 50%;
+  transition-property: transform;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-out;
+}
+.new-category-btn:hover,
+.new-category-btn:focus,
+.new-category-btn:active {
+  color: #000;
+}
+.new-category-btn:hover:before,
+.new-category-btn:focus:before,
+.new-category-btn:active:before {
+  transform: scaleY(1);
 }

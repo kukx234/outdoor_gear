@@ -1,17 +1,20 @@
-<div class="popup-warning">
-    <h1>Upozorenje</h1>
-    <p>Jeste li sigurni da želite izbrisati?</p>
-    <div class="popup-btns">
-        <a href="">Odustani</a>
-        <button class="btn-delete" >Obriši</button>
+<div class="popup-main-div">
+    <div class="popup-warning">
+        <h1>Upozorenje</h1>
+        <p>Jeste li sigurni da želite izbrisati?</p>
+        <div class="popup-btns">
+            <a href="">Odustani</a>
+            <button class="btn-delete" >Obriši</button>
+        </div>
     </div>
 </div>
+
 
 <script>
 
     $(".delete").click(function() {
          $(this).parent().parent().addClass("removethis");
-         $(".popup-warning").css("display","block");
+         $(".popup-main-div").css("display","flex");
     });
 
     function popupAlert(route , id){
@@ -28,6 +31,8 @@
                     opacity:"0",
                     height:"0",
                   },1000);
+
+                  $(".popup-main-div").css("display","none");
 
                   setTimeout(function(){
                       $('.removethis').remove();
