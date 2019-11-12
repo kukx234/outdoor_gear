@@ -1,3 +1,35 @@
 .popup-warning {
-  display: none
+  display: none;
+  color: #fff;
+  background-color: black;
+  margin: 50px;
+  padding: 40px;
+  border-radius: 20px;
+}
+
+.popup-btns {
+  display: flex;
+  justify-content: space-around;
+}
+
+.popup-btns *{
+  padding: 0 20px;
+}
+
+.popup-btns a {
+  text-decoration: none;
+  color: #fff;
+  border: 2px solid #006600;
+  border-radius: 24px;
+  padding: 5px 13px;
+}
+
+.btn-delete {
+  background-color: black;
+  color: #fff;
+  border: 2px solid #cc0000;
+  border-radius: 24px;
+  padding: 5px 22px;
+  font-size: 16px;
+  outline: none;
 }

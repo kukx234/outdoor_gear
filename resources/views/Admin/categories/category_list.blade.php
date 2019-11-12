@@ -11,7 +11,7 @@
 
     <h1>Kategorije</h1>
 
-    <div><a href="{{ route("new-category") }}" >Nova kategorija</a></div>
+    <div><a class="new-category-btn" href="{{ route("new-category") }}" >Nova kategorija</a></div>
 
     <ul>
         @foreach ($categories as $category)

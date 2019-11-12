@@ -3,7 +3,7 @@
     <p>Jeste li sigurni da želite izbrisati?</p>
     <div class="popup-btns">
         <a href="">Odustani</a>
-        <button  class="btn-delete" >obrši2</a>
+        <button class="btn-delete" >Obriši</button>
     </div>
 </div>
 
