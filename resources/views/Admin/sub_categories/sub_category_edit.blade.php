@@ -3,7 +3,8 @@
 @section('content')
     <h1>{{ $sub_category->title }}</h1>
 
-    <form action="" method="POST">
+    <form action="{{ route("sub_edit_save" , $sub_category->id ) }}" method="POST">
+        @csrf
         <label for="title">Naslov podkategorije</label>
         <input type="text" name="title" id="title" value="{{ $sub_category->title }}">
 
@@ -17,5 +18,8 @@
                 @endif
             @endforeach
         </select>
+
+        <button type="submit">Spremi</button>
+        <a href="">Odustani</a>
     </form>
 @endsection

@@ -14,17 +14,13 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
         crossorigin="anonymous">
     </script>
-    <script src="{{ asset('js/zoom-master/jquery.zoom.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/slick/slick.min.js') }}"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
+  
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/login.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('js/slick/slick.css') }}"/>
 
 </head>
 <body>

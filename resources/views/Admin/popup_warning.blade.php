@@ -20,6 +20,8 @@
     function popupAlert(route , id){
 
       $(".btn-delete").click(function() {
+          console.log("click");
+          
 
           $.ajax({
               type:"GET",

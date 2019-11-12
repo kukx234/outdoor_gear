@@ -10,13 +10,14 @@
             @foreach ($products as $product)
                 <li>
                     <span>{{ $product->title }}</span>
-                    <span>{{ $product->categories_id }}</span>
-                    <span>{{ $product->sub_categories_id }}</span>
-                    <a href="{{ route('product_details', $product->id) }}">Detalji</a>
-                    <a href="{{ route("product_delete" , $product->id) }}">Obriši</a>
+                    <div class="list-buttons">
+                        <a href="{{ route('product_details', $product->id) }}">Detalji</a>
+                        <a href="{{ route("product_edit", $product->id) }}">Uredi</a>
+                        <a class="delete" onclick="popupAlert('productDelete',{{ $product->id }})">Obriši</a>
+                    </div>
                 </li>
             @endforeach
         </ul>
     @endif
-
+    @include('Admin.popup_warning')
 @endsection

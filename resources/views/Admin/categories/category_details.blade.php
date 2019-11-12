@@ -12,7 +12,7 @@
                     <li>
                         {{ $sub_category->title }}
                         <a href="{{ route('sub_category_details', $sub_category->id) }}">Detalji</a>
-                        <a href="">Uredi</a>
+                        <a href="{{ route("sub_category_edit", $sub_category->id) }}">Uredi</a>
                     </li>
                 @endforeach
             </ul>

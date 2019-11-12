@@ -1,10 +1,8 @@
 @extends('layouts.adminnav')
 
 @section('content')
+@include('Admin.success_msg');
 
-    @if (Session::has('Success'))
-        <p>{{ Session::get('Success') }}</p>
-    @endif
 <div class="category-list">
 
   <div class="category-list-form">

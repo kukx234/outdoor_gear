@@ -14,8 +14,6 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
         crossorigin="anonymous">
     </script>
-    <script src="{{ asset('js/zoom-master/jquery.zoom.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/slick/slick.min.js') }}"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -23,16 +21,13 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/login.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('js/slick/slick.css') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/adminnav.css') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/category.css') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/validate-error.css') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/forgotpassword.css') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/new_subcategory.css') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/new_product.css') }}"/>
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/category_list.css') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/popup_warning.css') }}"/>
 </head>
 <body>

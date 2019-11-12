@@ -69,4 +69,14 @@ class SubCategoryController extends Controller
                                                              ->with('categories', $categories);
     }
 
+    public function editSave(Request $request)
+    {
+        Sub_Category::where('id', $request->id)->update([
+            'title' => $request->title,
+            'categories_id' => $request->categoryId,
+        ]);
+
+        return redirect()->route("sub_category_list")->with("Success", "Podkategorija uspješno promjenjena");
+    }
+
 }
