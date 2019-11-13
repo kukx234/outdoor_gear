@@ -2,16 +2,12 @@
 
 @section('content')
 
-<<<<<<< HEAD
-    @if (Session::has('Success'))
-        {{ Session::get('Success') }}
-    @endif
+
 <div class="category-list">
 
   <div class="category-list-form">
-=======
+
 @include('Admin.success_msg');
->>>>>>> 385f677c784e8c1e097b28ccb512d883d9654af1
 
     <h1>Podkategorije</h1>
 
@@ -23,15 +19,11 @@
                 <li>
                     <span>{{ $sub_category->title }}</span>
                     <div class="list-buttons">
-<<<<<<< HEAD
-                      <a href="{{ route('sub_category_details', $sub_category->id) }}">Detalji</a>
-                      <a href="{{ route('sub_category_edit', $sub_category->id) }}">Uredi</a>
+
+                      <a class="details" href="{{ route('sub_category_details', $sub_category->id) }}">Detalji</a>
+                      <a class="makeup" href="{{ route('sub_category_edit', $sub_category->id) }}">Uredi</a>
                       <button class="delete" onclick="popupAlert('deletesubcategory',{{ $sub_category->id }})">Obriši</button>
-=======
-                        <a href="{{ route('sub_category_details', $sub_category->id) }}">Detalji</a>
-                        <a href="{{ route('sub_category_edit', $sub_category->id) }}">Uredi</a>
-                        <a class="delete" onclick="popupAlert('deletesubcategory',{{ $sub_category->id }})">Obriši</a>
->>>>>>> 385f677c784e8c1e097b28ccb512d883d9654af1
+
                     </div>
                 </li>
             @endforeach

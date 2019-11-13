@@ -1,11 +1,13 @@
 @extends('layouts.adminnav')
 
 @section('content')
-@include('Admin.success_msg');
+
 
 <div class="category-list">
 
   <div class="category-list-form">
+
+@include('Admin.success_msg');
 
     <h1>Kategorije</h1>
 
@@ -16,8 +18,8 @@
             <li>
                   <span>{{ $category->title }}</span>
                   <div class="list-buttons">
-                    <a href="{{ route('category_details', $category->id ) }}">Detalji</a>
-                    <a href="{{ route('category_edit', $category->id) }}">Uredi</a>
+                    <a class="details" href="{{ route('category_details', $category->id ) }}">Detalji</a>
+                    <a class="makeup" href="{{ route('category_edit', $category->id) }}">Uredi</a>
                     <button class="delete" onclick="popupAlert('categoriesdelete',{{ $category->id }})">Obriši</button>
                   </div>
             </li>

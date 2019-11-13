@@ -1,9 +1,16 @@
 @extends('layouts.adminnav')
 
 @section('content')
+
+<div class="category-list">
+
+  <div class="category-list-form">
+
+@include('Admin.success_msg');
+
     <h1>Produkti</h1>
 
-    <a href="{{ route('new_product') }}">Novi produkt</a>
+    <div><a class="new-category-btn" href="{{ route('new_product') }}">Novi produkt</a></div>
 
     @if (!empty($products))
         <ul>
@@ -11,13 +18,17 @@
                 <li>
                     <span>{{ $product->title }}</span>
                     <div class="list-buttons">
-                        <a href="{{ route('product_details', $product->id) }}">Detalji</a>
-                        <a href="{{ route("product_edit", $product->id) }}">Uredi</a>
-                        <a class="delete" onclick="popupAlert('productDelete',{{ $product->id }})">Obriši</a>
+
+                        <a class="details" href="{{ route('product_details', $product->id) }}">Detalji</a>
+                        <a class="makeup" href="{{ route("product_edit", $product->id) }}">Uredi</a>
+                        <button class="delete" onclick="popupAlert('productDelete',{{ $product->id }})">Obriši</button>
+
                     </div>
                 </li>
             @endforeach
         </ul>
     @endif
+  </div>
+</div>
     @include('Admin.popup_warning')
 @endsection

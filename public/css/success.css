@@ -1,0 +1,10 @@
+.success-p p {
+  color: #e6e600;
+  font-size: 20px;
+}
+
+.success-p {
+  position: absolute;
+  right: 25px;
+  top:5px;
+}

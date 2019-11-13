@@ -50,8 +50,9 @@ h3 {
     border-radius: 10px;
     width: 100px;
     padding: 6px 0;
-    background-color: #fff;
+    background-color: transparent;
     font-size: 15px;
+    color: #fff;
 }
 
 .btn-quit {
@@ -59,11 +60,11 @@ h3 {
     width: 100px;
     padding: 6px 0;
     border-radius: 10px;
-    background-color: #fff;
+    background-color: transparent;
     text-decoration: none;
     font-size: 15px;
     text-align: center;
-    color: black;
+    color: #fff;
 }
 
 .btn-save:hover {
@@ -93,6 +94,7 @@ h3 {
     padding: 50px 70px;
     box-shadow: -1px 4px 52px -5px rgba(0,0,0,0.7);
     width: 800px;
+    position: relative;
 }
 
 .category-list-form ul {
@@ -124,6 +126,31 @@ h1 {
 
 .list-buttons *{
     margin: 0 15px;
+}
+
+.list-buttons a {
+    background-color: #1a1a1a;
+    padding: 3px 16px;
+    border-radius: 20px;
+    outline: none;
+}
+
+.details {
+    border: 2px solid #99e6ff;
+}
+
+.makeup {
+    border: 2px solid #4d9900;
+}
+
+.delete {
+    background-color: #1a1a1a;
+    outline: none;
+    padding: 7px 16px;
+    border-radius: 20px;
+    border: 2px solid #cc0000;
+    color: white;
+    font-size: 16px;
 }
 
 .category-list-form ul li span {

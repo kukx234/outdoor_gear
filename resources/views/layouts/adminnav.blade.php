@@ -29,6 +29,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/new_subcategory.css') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/new_product.css') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/popup_warning.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/success.css') }}"/>
 </head>
 <body>
 
