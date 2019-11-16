@@ -20,9 +20,9 @@
                     <span>{{ $sub_category->title }}</span>
                     <div class="list-buttons">
 
-                      <a class="details" href="{{ route('sub_category_details', $sub_category->id) }}">Detalji</a>
-                      <a class="makeup" href="{{ route('sub_category_edit', $sub_category->id) }}">Uredi</a>
-                      <button class="delete" onclick="popupAlert('deletesubcategory',{{ $sub_category->id }})">Obriši</button>
+                      <a class="details onhover" href="{{ route('sub_category_details', $sub_category->id) }}">Detalji</a>
+                      <a class="makeup onhover" href="{{ route('sub_category_edit', $sub_category->id) }}">Uredi</a>
+                      <button class="delete onhover" onclick="popupAlert('deletesubcategory',{{ $sub_category->id }})">Obriši</button>
 
                     </div>
                 </li>

@@ -18,9 +18,9 @@
             <li>
                   <span>{{ $category->title }}</span>
                   <div class="list-buttons">
-                    <a class="details" href="{{ route('category_details', $category->id ) }}">Detalji</a>
-                    <a class="makeup" href="{{ route('category_edit', $category->id) }}">Uredi</a>
-                    <button class="delete" onclick="popupAlert('categoriesdelete',{{ $category->id }})">Obriši</button>
+                    <a class="details onhover" href="{{ route('category_details', $category->id ) }}">Detalji</a>
+                    <a class="makeup onhover" href="{{ route('category_edit', $category->id) }}">Uredi</a>
+                    <button class="delete onhover" onclick="popupAlert('categoriesdelete',{{ $category->id }})">Obriši</button>
                   </div>
             </li>
         @endforeach

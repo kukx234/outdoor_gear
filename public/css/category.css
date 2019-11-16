@@ -27,7 +27,7 @@ h3 {
     padding: 5px 0;
     font-size: 15px;
     color: #fff;
-}
+} 
 
 .section-form input {
     width: 267px;
@@ -156,6 +156,8 @@ h1 {
 .category-list-form ul li span {
     margin: 0 15px;
     text-transform: capitalize;
+    display: flex;
+    align-items: center;
 }
 
 .new-category-btn {
@@ -196,4 +198,61 @@ h1 {
 .new-category-btn:focus:before,
 .new-category-btn:active:before {
   transform: scaleY(1);
+}
+
+.onhover {
+  transform: perspective(1px) translateZ(0);
+  position: relative;
+  transition-property: color;
+  transition-duration: 0.3s;
+}
+
+.onhover:before  {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 13px;
+  transform: scaleY(0);
+  transform-origin: 50%;
+  transition-property: transform;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-out;
+}
+
+
+.onhover:hover:before,
+.onhover:focus:before,
+.onhover:active:before {
+  transform: scaleY(1);
+}
+
+.details::before {
+  background-color: #99e6ff;
+}
+
+.details:hover {
+    background-color: transparent;
+    color: #000;
+}
+
+.makeup::before {
+  background-color: #4d9900;
+}
+
+.makeup:hover {
+    background-color: transparent;
+    color: #000;
+}
+
+.delete::before {
+  background-color: #cc0000;
+}
+
+.delete:hover {
+    background-color: transparent;
+    color: #000;
 }

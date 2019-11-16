@@ -19,9 +19,9 @@
                     <span>{{ $product->title }}</span>
                     <div class="list-buttons">
 
-                        <a class="details" href="{{ route('product_details', $product->id) }}">Detalji</a>
-                        <a class="makeup" href="{{ route("product_edit", $product->id) }}">Uredi</a>
-                        <button class="delete" onclick="popupAlert('productDelete',{{ $product->id }})">Obriši</button>
+                        <a class="details onhover" href="{{ route('product_details', $product->id) }}">Detalji</a>
+                        <a class="makeup onhover" href="{{ route("product_edit", $product->id) }}">Uredi</a>
+                        <button class="delete onhover" onclick="popupAlert('productDelete',{{ $product->id }})">Obriši</button>
 
                     </div>
                 </li>
