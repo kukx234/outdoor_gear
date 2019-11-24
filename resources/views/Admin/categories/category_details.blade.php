@@ -6,13 +6,15 @@
 
     @if (!$sub_categories->isEmpty())
         <div class="sub-categories">
-            <span>Podkategorije ({{ count($sub_categories) }}) </span>
+            <div> 
+                Podkategorije
+                <span>{{ count($sub_categories) }}</span>
+            </div>
             <ul>
                 @foreach ($sub_categories as $sub_category)
                     <li>
                         {{ $sub_category->title }}
                         <a href="{{ route('sub_category_details', $sub_category->id) }}">Detalji</a>
-                        <a href="{{ route("sub_category_edit", $sub_category->id) }}">Uredi</a>
                     </li>
                 @endforeach
             </ul>
@@ -27,13 +29,14 @@
                     <li>
                         {{ $product->title }}
                         <a href="{{ route('product_details', $product->id) }}">Detalji</a>
-                        <a href="">Uredi</a>
                     </li>
                 @endforeach
             </ul>
         </div>
     @endif
 
+    <a class="makeup onhover" href="{{ route('category_edit', $category->id) }}">Uredi</a>
+    <button class="delete onhover" onclick="popupAlert('categoriesdelete',{{ $category->id }})">Obriši</button>
     <button onclick="goBack()">Nazad</button>
 </div>
 

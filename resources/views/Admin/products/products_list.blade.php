@@ -6,7 +6,7 @@
 
   <div class="category-list-form">
 
-@include('Admin.success_msg');
+@include('Admin.success_msg')
 
     <h1>Produkti</h1>
 
@@ -18,11 +18,7 @@
                 <li>
                     <span>{{ $product->title }}</span>
                     <div class="list-buttons">
-
                         <a class="details onhover" href="{{ route('product_details', $product->id) }}">Detalji</a>
-                        <a class="makeup onhover" href="{{ route("product_edit", $product->id) }}">Uredi</a>
-                        <button class="delete onhover" onclick="popupAlert('productDelete',{{ $product->id }})">Obriši</button>
-
                     </div>
                 </li>
             @endforeach
@@ -32,3 +28,4 @@
 </div>
     @include('Admin.popup_warning')
 @endsection
+

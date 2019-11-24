@@ -14,6 +14,8 @@
         @endif
         <span>Kreiran : {{ $product->created_at }}</span>
 
+        <a class="makeup onhover" href="{{ route("product_edit") }}?id={{ $product->id }}">Uredi</a>
+        <button class="delete onhover" onclick="popupAlert('productDelete',{{ $product->id }})">Obriši</button>
         <button onclick="goBack()">Nazad</button>
     </div>
 

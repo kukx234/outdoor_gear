@@ -11,6 +11,7 @@
 |
 */
 
+
 Route::get('/', function () {
     return view('welcome');
 })->middleware('check_role');
@@ -49,8 +50,13 @@ Route::prefix('admin')->middleware(['auth', 'check_role'])->group(function ()
     Route::name('save_new_product')->post('newproduct', 'Admin\ProductController@save');
     Route::name('product_delete')->get('productDelete', 'Admin\ProductController@delete');
     Route::name('product_details')->get('productDetails/{id}', 'Admin\ProductController@details');
-    Route::name('product_edit')->get('product/edit/{id}', 'Admin\ProductController@edit');
+    Route::name('product_edit')->get('productedit', 'Admin\ProductController@editProduct');
+    Route::name('product_edit_save')->post('product/editsave/{id}', 'Admin\ProductController@editSave');
 
     Route::name('ajax-category-call')->get('ajaxcategorycall', 'Admin\ProductController@ajaxCategoryCall');
+
+    //spremanje slike
+    Route::name('header-image')->get('headerImage', 'Admin\HeaderImageController@showForm');
+    Route::name('image-save')->post('headerImageSave', 'Admin\HeaderImageController@addImage');
 
 });

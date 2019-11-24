@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Admin-{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -73,7 +73,7 @@
                 <li class="cat"><a href="{{ route('category_list') }}">Kategorije</a></li>
                 <li class="subcat"><a href="{{ route('sub_category_list') }}">Podkategorije</a></li>
                 <li class="product"><a href="{{ route('products_list') }}">Produkti</a></li>
-                <li><a href="">slike naslovnice</a></li>
+                <li><a href="{{ route('header-image') }}">Slike naslovnice</a></li>
             </ul>
         </nav>
     @endif

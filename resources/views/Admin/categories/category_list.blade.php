@@ -7,7 +7,7 @@
 
   <div class="category-list-form">
 
-@include('Admin.success_msg');
+@include('Admin.success_msg')
 
     <h1>Kategorije</h1>
 
@@ -19,8 +19,6 @@
                   <span>{{ $category->title }}</span>
                   <div class="list-buttons">
                     <a class="details onhover" href="{{ route('category_details', $category->id ) }}">Detalji</a>
-                    <a class="makeup onhover" href="{{ route('category_edit', $category->id) }}">Uredi</a>
-                    <button class="delete onhover" onclick="popupAlert('categoriesdelete',{{ $category->id }})">Obriši</button>
                   </div>
             </li>
         @endforeach

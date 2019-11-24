@@ -13,6 +13,7 @@ use App\Models\User;
 
 class ProductController extends Controller
 {
+    
     public function allProducts()
     {
         return view('Admin.products.products_list')->with('products', Product::all());
@@ -72,9 +73,48 @@ class ProductController extends Controller
                                                      ->with('sub_category', $sub_category);
     }
 
+    public function editProduct(Request $request)
+    {
+        $product = Product::where('id', $request->id)->first();
+        $sub_category = "";
+        $subcategories = "";
+        $categories = Category::all();
+
+        if($product->sub_categories_id != null) {
+            $sub_category = Sub_Category::where('id', $product->sub_categories_id)->first();
+            $subcategories = Sub_Category::where('categories_id', $sub_category->categories_id)->get();
+        }
+
+        return view('Admin.products.product_edit')->with("product", $product)
+                                                    ->with("categories", $categories)
+                                                    ->with("subcategory", $sub_category)
+                                                    ->with("subcategories", $subcategories);
+    }
+
+    public function editSave(ProductRequest $request)
+    {
+        $sub_category_id = $request->sub_category_id;
+        if(!$request->sub_category_id){
+            $sub_category_id = null;
+        }
+
+        Product::where('id', $request->id)->update([
+            'title' => $request->title,
+            'categories_id' => $request->category_id,
+            'sub_categories_id' => $sub_category_id,
+            'description' => $request->description,
+            'price' => $request->price,
+            'product_actions_id' => $request->discount,
+            'updated_at' => date('Y-m-d H:i:s'),
+            ]);
+
+        return redirect()->route('products_list')->with("Success", "Produkt uspiješno uređen");
+    }
+
     public static function ajaxCategoryCall(Request $request)
     {
         $category = Category::with('subCategory')->where('id', $request->category_id)->first();
-        return with(['category' => $category]);
+        return with(["category" => $category ]);
     }
+
 }

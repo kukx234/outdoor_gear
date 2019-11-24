@@ -57,7 +57,6 @@
                      url:"ajaxcategorycall",
                      data: { category_id: category_id},
                      success:function(data){
-                         console.log(data);
                          $("#sub-category-select").children().not(':first').remove();
                          if(data.category.sub_category.length > 0){
                              $("#sub-category-select").show();
