@@ -19,6 +19,7 @@
                   <span>{{ $category->title }}</span>
                   <div class="list-buttons">
                     <a class="details onhover" href="{{ route('category_details', $category->id ) }}">Detalji</a>
+                    <a href="{{ route('add-image')}}?category_id={{ $category->id }}">Dodaj sliku</a>
                   </div>
             </li>
         @endforeach

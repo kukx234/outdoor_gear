@@ -10,28 +10,44 @@ use App\Http\Requests\HeaderImageRequest;
 
 class HeaderImageController extends Controller
 {
-    public function showForm()
+    public function showForm(Request $request)
     {
-        $header_images = HeaderImage::orderByDesc('id')->get();
-        return view('Admin.headerImage.show_form')->with("images", $header_images);
+        if($request->category_id){
+            $category_images = SaveImage::showFormImages('category', $request->category_id);
+            return view('Admin.headerImage.show_form')->with("images", $category_images);
+        }
+        elseif ($request->sub_category_id) {
+            $sub_category_images = SaveImage::showFormImages('sub_category', $request->sub_category_id);
+            return view('Admin.headerImage.show_form')->with("images", $sub_category_images);
+        }
+        elseif ($request->product_id) {
+            $product_images = SaveImage::showFormImages('product', $request->product_id);
+            return view('Admin.headerImage.show_form')->with("images", $product_images );
+        }
+        else {
+            $header_images = HeaderImage::orderByDesc('id')->get();
+            return view('Admin.headerImage.show_form')->with("images", $header_images);
+        }
+
     }
 
     public function addImage(HeaderImageRequest $request)
     {
         $image = request()->file('image');
-        $image_name = time().".".$image->getClientOriginalExtension();
+        SaveImage::saveImageToFolder($image);
 
-        $saveimg = new SaveImage;
-        $saveimg->saveImageToFolder($image);
-
-        HeaderImage::insert([
-            'image' => $image_name,
-            'created_at' => date('Y-m-d H:i:s'),
-            'updated_at' => date('Y-m-d H:i:s'),
-        ]);
-
-        $header_images = HeaderImage::orderByDesc('id')->get();
-
-        return redirect()->back()->with("images",$header_images);
+        if($request->category_id){
+            $result = SaveImage::saveImageToDatabase($image, 'category', $request->category_id);
+        }
+        elseif($request->sub_category_id){
+            $result = SaveImage::saveImageToDatabase($image, 'sub_category', $request->sub_category_id);
+        }
+        elseif($request->product_id){
+            $result = SaveImage::saveImageToDatabase($image, 'product', $request->product_id);
+        }
+        else {
+            $result = SaveImage::saveImageToDatabase($image, 'header', $request->id);
+        }
+        return redirect()->back()->with("images",$result);
     }
 }

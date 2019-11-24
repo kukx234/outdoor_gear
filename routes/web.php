@@ -56,7 +56,7 @@ Route::prefix('admin')->middleware(['auth', 'check_role'])->group(function ()
     Route::name('ajax-category-call')->get('ajaxcategorycall', 'Admin\ProductController@ajaxCategoryCall');
 
     //spremanje slike
-    Route::name('header-image')->get('headerImage', 'Admin\HeaderImageController@showForm');
-    Route::name('image-save')->post('headerImageSave', 'Admin\HeaderImageController@addImage');
+    Route::name('add-image')->get('addImage', 'Admin\HeaderImageController@showForm');
+    Route::name('image-save')->post('ImageSave', 'Admin\HeaderImageController@addImage');
 
 });

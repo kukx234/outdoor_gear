@@ -20,4 +20,9 @@ class Sub_Category extends Model
         return $this->hasMany('App\Models\Product', 'sub_categories_id');
     }
 
+    public function subCategoryImages()
+    {
+        return $this->hasMany('App\Models\SubCategoryImages', 'sub_categories_id');
+    }
+
 }
