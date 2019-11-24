@@ -2,7 +2,7 @@
 
 @section('content')
 @include('Admin.validation_error')
-    <h1>Dodavanje slika naslovnice</h1>
+    <h1>Slike naslovnice</h1>
     <form action="{{ route('image-save') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <label for="addimage">Odaberi sliku</label>
