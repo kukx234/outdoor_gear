@@ -39,8 +39,8 @@ class HeaderImageController extends Controller
         if($request->category_id){
             $result = SaveImage::saveImageToDatabase($image, 'category', $request->category_id);
         }
-        elseif($request->sub_category_id){
-            $result = SaveImage::saveImageToDatabase($image, 'sub_category', $request->sub_category_id);
+        elseif($request->subcategory_id){
+            $result = SaveImage::saveImageToDatabase($image, 'sub_category', $request->subcategory_id);
         }
         elseif($request->product_id){
             $result = SaveImage::saveImageToDatabase($image, 'product', $request->product_id);

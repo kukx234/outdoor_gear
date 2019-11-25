@@ -11,7 +11,12 @@
 
     <h1>Podkategorije</h1>
 
-    <div><a class="new-category-btn" href="{{ route('new_sub_category') }}">Nova podkategorija</a></div>
+    <div>
+      <a class="new-category-btn" href="{{ route('new_sub_category') }}">
+        <i class="fas fa-plus"></i>
+        <span>Nova podkategorija</span>
+      </a>
+    </div>
 
     @if (!empty($sub_categories))
         <ul>
@@ -21,7 +26,10 @@
                     <div class="list-buttons">
 
                       <a class="details onhover" href="{{ route('sub_category_details', $sub_category->id) }}">Detalji</a>
-                      <a href="{{ route('add-image')}}?subcategory_id={{ $sub_category->id }}">Dodaj sliku</a>
+                      <a class="addImg" href="{{ route('add-image')}}?subcategory_id={{ $sub_category->id }}">
+                        <i class="fas fa-images"></i>
+                        <span>dodaj sliku</span>
+                      </a>
                     </div>
                 </li>
             @endforeach

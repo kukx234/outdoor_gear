@@ -75,6 +75,9 @@ body {
     transform: translateY(0);
   }
 
+a {
+  color: #000;
+}
 
 
 .sec-nav ul {
@@ -82,7 +85,7 @@ body {
     flex-direction: row;
     justify-content: center;
     max-width: 1440px;
-    background-color: rgba(230,77,0,1);;
+    background-color: #ffcc00;
     margin: 0 auto;
     border-radius: 24px;
 
@@ -96,12 +99,21 @@ body {
     transition: color 0.5s;
 }
 
+.current {
+  background-color: #1a1a1a;
+  color: #fff !important;
+}
+
 .sec-nav a {
     text-decoration: none;
-    color: #fff;
     text-transform: uppercase;
     font-size: 18px;
     font-weight: 300;
+    color: #000;
+}
+
+.sec-nav li:hover a{
+  color: #fff;
 }
 
 /* Bounce To Bottom */
@@ -127,8 +139,4 @@ body {
   .sec-nav li:hover:before, .sec-nav li:focus:before, .sec-nav li:active:before {
     transform: scaleY(1);
     transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
-  }
-
-  .current {
-    background-color: #1a1a1a;
   }

@@ -11,7 +11,12 @@
 
     <h1>Kategorije</h1>
 
-    <div><a class="new-category-btn" href="{{ route("new-category") }}" >Nova kategorija</a></div>
+    <div>
+        <a class="new-category-btn" href="{{ route("new-category") }}" >
+          <i class="fas fa-plus"></i>
+          <span>Nova kategorija</span>
+        </a>
+    </div>
 
     <ul>
         @foreach ($categories as $category)
@@ -31,9 +36,4 @@
 </div>
   @include('Admin.popup_warning')
 
-  <script>
-    $(".addImg").hover(function(){
-      $(this).find('span').toggleClass("show-msg");
-    });
-  </script>
 @endsection

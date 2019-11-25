@@ -95,9 +95,20 @@
         if (window.location.href.indexOf("header") > -1) {
             $(".header").addClass("current");
         }
+
         function goBack() {
           window.history.back();
         }
+
+        $('.addImg').hover(function(){
+          $(this).find("span").toggleClass('show-msg')
+        });
+
+
+        $('.new-category-btn').hover(function(){
+          $(this).find("span").toggleClass('show-msg')
+        });
+        
     </script>
 
 </body>
