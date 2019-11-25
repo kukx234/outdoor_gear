@@ -2,7 +2,7 @@
 
 @section('content')
 @include('Admin.validation_error')
-    <h1>Slike naslovnice</h1>
+    <h1>Dodavanje slike</h1>
     @if (Request::get('category_id'))
         <form action="{{ route('image-save') }}?category_id={{  Request::get('category_id') }}" method="POST" enctype="multipart/form-data">
     @elseif(Request::get('sub_category_id'))
@@ -17,6 +17,7 @@
         <input type="file" name="image" id="addimage">
 
         <button type="submit">Spremi</button>
+        <a onclick="goBack()">Nazad</a>
     </form>
 
     @if (!empty($images))

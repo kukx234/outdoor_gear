@@ -40,10 +40,4 @@
     <button onclick="goBack()">Nazad</button>
 </div>
 
-<script>
-    function goBack() {
-      window.history.back();
-    }
-
-</script>
 @endsection

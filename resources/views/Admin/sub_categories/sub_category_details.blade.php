@@ -27,10 +27,5 @@
     <a class="delete onhover" onclick="popupAlert('deletesubcategory',{{ $sub_category->id }})">Obriši</a>
     <a onclick="goBack()"><i class="fas fa-arrow-circle-left"></i></a>
   
-    <script>
-        function goBack() {
-          window.history.back();
-        }
-    </script>
     @include('Admin.popup_warning')
 @endsection

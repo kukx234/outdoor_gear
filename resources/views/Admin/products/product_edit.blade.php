@@ -53,10 +53,6 @@
 
     <script>
 
-    function goBack() {
-        window.history.back();
-    }
-
     $("#category-select").change(function(){
                  var category_id = this.value;
                  $.ajax({

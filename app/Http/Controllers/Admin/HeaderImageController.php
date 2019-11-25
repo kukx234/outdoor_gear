@@ -12,12 +12,12 @@ class HeaderImageController extends Controller
 {
     public function showForm(Request $request)
     {
-        if($request->category_id){
-            $category_images = SaveImage::showFormImages('category', $request->category_id);
+        if($request->categories_id){
+            $category_images = SaveImage::showFormImages('category', $request->categories_id);
             return view('Admin.headerImage.show_form')->with("images", $category_images);
         }
-        elseif ($request->sub_category_id) {
-            $sub_category_images = SaveImage::showFormImages('sub_category', $request->sub_category_id);
+        elseif ($request->subcategory_id) {
+            $sub_category_images = SaveImage::showFormImages('sub_category', $request->subcategory_id);
             return view('Admin.headerImage.show_form')->with("images", $sub_category_images);
         }
         elseif ($request->product_id) {

@@ -21,7 +21,7 @@
                     <div class="list-buttons">
 
                       <a class="details onhover" href="{{ route('sub_category_details', $sub_category->id) }}">Detalji</a>
-                      <a href="{{ route('add-image')}}?sub_category_id={{ $sub_category->id }}">Dodaj sliku</a>
+                      <a href="{{ route('add-image')}}?subcategory_id={{ $sub_category->id }}">Dodaj sliku</a>
                     </div>
                 </li>
             @endforeach

@@ -19,7 +19,10 @@
                   <span>{{ $category->title }}</span>
                   <div class="list-buttons">
                     <a class="details onhover" href="{{ route('category_details', $category->id ) }}">Detalji</a>
-                    <a href="{{ route('add-image')}}?category_id={{ $category->id }}">Dodaj sliku</a>
+                    <a class="addImg" href="{{ route('add-image')}}?categories_id={{ $category->id }}">
+                      <i class="fas fa-images"></i>
+                      <span>dodaj sliku</span>
+                    </a>
                   </div>
             </li>
         @endforeach
@@ -27,4 +30,10 @@
     </div>
 </div>
   @include('Admin.popup_warning')
+
+  <script>
+    $(".addImg").hover(function(){
+      $(this).find('span').toggleClass("show-msg");
+    });
+  </script>
 @endsection

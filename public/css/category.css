@@ -256,3 +256,27 @@ h1 {
     background-color: transparent;
     color: #000;
 }
+
+.addImg {
+    background-color: transparent !important;
+    padding: 0 !important;
+    position: relative;
+}
+
+.addImg i {
+    font-size: 25px;
+}
+
+.addImg span {
+    visibility: hidden;
+    position: absolute;
+    top: -40px;
+    right: -100px;
+    background-color: #fff;
+    padding: 5px 10px;
+    color: #000;
+}
+
+.show-msg {
+    visibility: visible !important;
+}

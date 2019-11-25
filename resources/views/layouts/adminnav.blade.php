@@ -73,7 +73,7 @@
                 <li class="cat"><a href="{{ route('category_list') }}">Kategorije</a></li>
                 <li class="subcat"><a href="{{ route('sub_category_list') }}">Podkategorije</a></li>
                 <li class="product"><a href="{{ route('products_list') }}">Produkti</a></li>
-                <li><a href="{{ route('add-image') }}">Slike naslovnice</a></li>
+                <li class="header" ><a href="{{ route('add-image') }}?header">Slike naslovnice</a></li>
             </ul>
         </nav>
     @endif
@@ -91,6 +91,12 @@
         }
         if (window.location.href.indexOf("product") > -1) {
             $(".product").addClass("current");
+        }
+        if (window.location.href.indexOf("header") > -1) {
+            $(".header").addClass("current");
+        }
+        function goBack() {
+          window.history.back();
         }
     </script>
 
