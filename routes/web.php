@@ -58,5 +58,6 @@ Route::prefix('admin')->middleware(['auth', 'check_role'])->group(function ()
     //spremanje slike
     Route::name('add-image')->get('addImage', 'Admin\HeaderImageController@showForm');
     Route::name('image-save')->post('ImageSave', 'Admin\HeaderImageController@addImage');
+    Route::name('delete-Image')->post('deleteImage', 'Admin\HeaderImageController@deleteImage');
 
 });

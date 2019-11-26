@@ -2,6 +2,7 @@
 
 @section('content')
 @include('Admin.validation_error')
+
 <div class="category-list-form">
 
     <h1>Dodavanje slike</h1>
@@ -38,13 +39,13 @@
       <div class="images-list">
         @foreach ($images as $image)
           <div class="main-img-box">
-            <div class="image-box">
-              <img data-fancybox="gallery" src="{{ asset("images/upload/$image->image")}}" alt="">
-            </div>
+            <a class="image-box" data-fancybox="gallery" href="{{ asset("images/upload/$image->image") }}">
+              <img  src="{{ asset("images/upload/$image->image")}}" alt="">
+            </a>
             <h3>Naziv slike</h3>
               <div class="img-buttons">
-                <a href="#"><i class="fas fa-trash-alt"></i></a>
-                <a href="#"><i class="fas fa-cog"></i></a>
+                <button class="delete-img" value="{{ $image->id }}"><i class="fas fa-trash-alt"></i></button>
+                <button><i class="fas fa-cog"></i></button>
               </div>
           </div>
         @endforeach
@@ -53,17 +54,35 @@
 
     <script type="text/javascript">
 
-        $("[data-fancybox='gallery']").fancybox({
-          afterClose: function () {
-               parent.location.reload(true);
-           }
-        });
+        $(".image-box").fancybox({});
 
         $("#addimage").change(function(){
-          var file = $('#addimage')[0].files[0];
+            var file = $('#addimage')[0].files[0];
             $(".input-text").text(file.name);
         });
-    </script>
 
+        $(".delete-img").click(function(){
+            $(this).parent().parent().addClass("remove");
+
+            var classes = $(".current").attr("class"); 
+            var model_name = classes.split(" ");
+            var img_id = $(this).val();      
+
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
+                },
+            });
+          
+            $.ajax({
+                type:'POST',
+                url: 'deleteImage',
+                data: { image_id : img_id, model: model_name[0]},
+                success: function(){
+                    $(".remove").remove();
+                }
+            });
+        });
+    </script>
 
 @endsection

@@ -76,6 +76,18 @@ class SaveImage
             return HeaderImage::all();
         }
     }
+
+    public static function deleteImageFromDatabase($model, $id)
+    {
+        if($model == "category"){
+            CategoryImages::where('id', $id)->delete();
+        }else if($model == "subcategory"){
+            SubCategoryImages::where('id', $id)->delete();
+        }
+        elseif($model == "product"){
+            ProductImages::where('id', $id)->delete();
+        }
+    }
 }
 
 ?>

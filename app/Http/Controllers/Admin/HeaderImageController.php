@@ -50,4 +50,21 @@ class HeaderImageController extends Controller
         }
         return redirect()->back()->with("images",$result);
     }
+
+    public function deleteImage(Request $request)
+    {
+
+        if($request->model == "cat"){
+            SaveImage::deleteImageFromDatabase('category', $request->image_id);
+        }
+        else if($request->model == "subcat"){
+            SaveImage::deleteImageFromDatabase('subcategory', $request->image_id);
+        }
+        elseif($request->model == "product"){
+            SaveImage::deleteImageFromDatabase('product', $request->image_id);
+        }
+        else{
+            HeaderImage::where('id', $request->image_id)->delete();
+        }
+    }
 }

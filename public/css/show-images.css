@@ -37,12 +37,16 @@
   border: none;
 }
 
-.img-buttons a {
+.img-buttons button {
   margin: 0 15px;
   color: #fff;
   font-size: 25px;
+  border:none;
+  outline: none;
+  background-color: transparent;
 }
 
 .fancybox-content {
   padding: 0 !important;
+  background-color: transparent !important;
 }
