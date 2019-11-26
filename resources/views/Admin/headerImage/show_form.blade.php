@@ -35,16 +35,35 @@
 </div>
 
     @if (!empty($images))
+      <div class="images-list">
         @foreach ($images as $image)
-            <img src="{{ asset("images/upload/$image->image")}}" alt="">
+          <div class="main-img-box">
+            <div class="image-box">
+              <img data-fancybox="gallery" src="{{ asset("images/upload/$image->image")}}" alt="">
+            </div>
+            <h3>Naziv slike</h3>
+              <div class="img-buttons">
+                <a href="#"><i class="fas fa-trash-alt"></i></a>
+                <a href="#"><i class="fas fa-cog"></i></a>
+              </div>
+          </div>
         @endforeach
+      </div>
     @endif
 
     <script type="text/javascript">
+
+        $("[data-fancybox='gallery']").fancybox({
+          afterClose: function () {
+               parent.location.reload(true);
+           }
+        });
 
         $("#addimage").change(function(){
           var file = $('#addimage')[0].files[0];
             $(".input-text").text(file.name);
         });
     </script>
+
+
 @endsection

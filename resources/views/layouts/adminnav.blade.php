@@ -14,6 +14,7 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
         crossorigin="anonymous">
     </script>
+    <script src="{{ asset('js/fancybox-master/dist/jquery.fancybox.min.js') }}" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -30,6 +31,8 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/new_product.css') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/popup_warning.css') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/success.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/show-images.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('js/fancybox-master/dist/jquery.fancybox.min.css') }}"/>
 </head>
 <body>
 
@@ -108,7 +111,7 @@
         $('.new-category-btn').hover(function(){
           $(this).find("span").toggleClass('show-msg')
         });
-        
+
     </script>
 
 </body>

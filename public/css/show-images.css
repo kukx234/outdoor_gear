@@ -1,0 +1,48 @@
+.images-list {
+  width: 940px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.image-box {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+}
+
+.image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-box img:hover {
+  transform: scale(1.2);
+  transition: all 0.5s;
+}
+
+.main-img-box {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  padding: 20px 0;
+  border-bottom: 1px solid #ffcc00;
+
+}
+
+.main-img-box:last-child {
+  border: none;
+}
+
+.img-buttons a {
+  margin: 0 15px;
+  color: #fff;
+  font-size: 25px;
+}
+
+.fancybox-content {
+  padding: 0 !important;
+}

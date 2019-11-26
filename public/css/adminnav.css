@@ -104,6 +104,10 @@ a {
   color: #fff !important;
 }
 
+.current a {
+  color: #fff !important;
+}
+
 .sec-nav a {
     text-decoration: none;
     text-transform: uppercase;
