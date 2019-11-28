@@ -9,21 +9,26 @@ use App\Models\HeaderImage;
 
 class SaveImage 
 {
-    public static function showFormImages($model, $id)
+    public static function showFormImages($parameters)
     {
-        if($model == "category"){
+        $parameter  = explode("=",$parameters[1]);
+        $model = $parameter[0];
+        $id = $parameter[1];
+   
+        if($model == "categories_id"){
             return CategoryImages::where('categories_id', $id)->get();
         }
-        elseif($model == "sub_category"){
+        elseif($model == "subcategory_id"){
             return SubCategoryImages::where('sub_categories_id', $id)->get();
         }
-        elseif($model == "product"){
+        elseif($model == "product_id"){
             return ProductImages::where('product_id', $id)->get();
         }
         else {
             return HeaderImage::all();
         }
     }
+
 
     public static function saveImageToFolder($image)
     {
@@ -32,11 +37,19 @@ class SaveImage
         $image->move($image_path, $image_name);
     }
 
-    public static function saveImageToDatabase($image, $model, $id)
+
+    public static function saveImageToDatabase($image, $parameters)
     {
         $image_name = time().".".$image->getClientOriginalExtension();
-
-        if($model == "category"){
+        $model = "header";
+        if(count($parameters) > 1){
+            $parameter = explode("=", $parameters[1]);
+            $model = $parameter[0];
+            $id = $parameter[1];
+        }
+        
+        if($model == "category_id"){
+    
             CategoryImages::insert([
                 'image' => $image_name,
                 'categories_id' => $id,
@@ -46,7 +59,7 @@ class SaveImage
 
             return CategoryImages::where('categories_id', $id)->get();
         }
-        elseif($model == "sub_category"){
+        elseif($model == "subcategory_id"){
             SubCategoryImages::insert([
                 'image' => $image_name,
                 'sub_categories_id' => $id,
@@ -56,7 +69,7 @@ class SaveImage
 
             return SubCategoryImages::where('sub_categories_id', $id)->get();
         }
-        elseif($model == "product"){
+        elseif($model == "product_id"){
             ProductImages::insert([
                 'image' => $image_name,
                 'product_id' => $id,
@@ -77,16 +90,28 @@ class SaveImage
         }
     }
 
-    public static function deleteImageFromDatabase($model, $id)
+
+    public static function deleteImageFromDatabase($parameters)
     {
-        if($model == "category"){
+        $model = $parameters['model'];
+        $id = $parameters['image_id'];
+        
+        if($model == "cat"){
+            $filename = CategoryImages::where('id', $id)->first();
             CategoryImages::where('id', $id)->delete();
-        }else if($model == "subcategory"){
+        }else if($model == "subcat"){
+            $filename = SubCategoryImages::where('id', $id)->first();
             SubCategoryImages::where('id', $id)->delete();
         }
         elseif($model == "product"){
+            $filename = ProductImages::where('id', $id)->first();
             ProductImages::where('id', $id)->delete();
+        }else {
+            $filename = HeaderImage::where('id', $id)->first();
+            HeaderImage::where('id', $id)->delete();
         }
+        $image_path = public_path('/images/upload');
+        unlink($image_path."/".$filename->image);
     }
 }
 

@@ -39,13 +39,13 @@
       <div class="images-list">
         @foreach ($images as $image)
           <div class="main-img-box">
-            <a class="image-box" data-fancybox="gallery" href="{{ asset("images/upload/$image->image") }}">
-              <img  src="{{ asset("images/upload/$image->image")}}" alt="">
-            </a>
-            <h3>Naziv slike</h3>
+              <a class="image-box" data-fancybox="gallery" href="{{ asset("images/upload/$image->image") }}">
+                <img  src="{{ asset("images/upload/$image->image")}}" alt="">
+              </a>
+              <h3>{{ $image->image }}</h3>
               <div class="img-buttons">
-                <button class="delete-img" value="{{ $image->id }}"><i class="fas fa-trash-alt"></i></button>
-                <button><i class="fas fa-cog"></i></button>
+                  <button class="delete-img" value="{{ $image->id }}"><i class="fas fa-trash-alt"></i></button>
+                  <button><i class="fas fa-cog"></i></button>
               </div>
           </div>
         @endforeach
