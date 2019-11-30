@@ -24,4 +24,9 @@ class Product extends Model
     {
         return $this->belongsTo('App\Models\Product_action');
     }
+
+    public function productImages()
+    {
+        return $this->hasMany('App\Models\ProductImages');
+    }
 }

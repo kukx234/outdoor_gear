@@ -32,7 +32,7 @@ class SaveImage
 
     public static function saveImageToFolder($image)
     {
-        $image_name = time().".".$image->getClientOriginalExtension();
+        $image_name = time()."-".$image->getClientOriginalName();
         $image_path = public_path('/images/upload');
         $image->move($image_path, $image_name);
     }
@@ -40,7 +40,7 @@ class SaveImage
 
     public static function saveImageToDatabase($image, $parameters)
     {
-        $image_name = time().".".$image->getClientOriginalExtension();
+        $image_name = time()."-".$image->getClientOriginalName();
         $model = "header";
         if(count($parameters) > 1){
             $parameter = explode("=", $parameters[1]);

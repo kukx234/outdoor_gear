@@ -97,6 +97,7 @@ a {
     transform: perspective(1px) translateZ(0);
     position: relative;
     transition: color 0.5s;
+    margin: 0px -0.1px;
 }
 
 .current {

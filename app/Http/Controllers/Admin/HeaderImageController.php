@@ -26,7 +26,7 @@ class HeaderImageController extends Controller
         $full_url = $request->fullUrl();
         $parameters = explode("?", $full_url);
         $result = SaveImage::saveImageToDatabase($image,$parameters);
-        return redirect()->back()->with("images",$result);
+        return redirect()->back()->with("images",$result)->with("Success", "Slika uspiješno dodana");
     }
 
 

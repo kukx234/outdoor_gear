@@ -4,7 +4,7 @@
 @include('Admin.validation_error')
 
 <div class="category-list-form">
-
+@include('Admin.success_msg')
     <h1>Dodavanje slike</h1>
 
     @if (Request::get('categories_id'))
@@ -37,18 +37,19 @@
 
     @if (!empty($images))
       <div class="images-list">
-        @foreach ($images as $image)
-          <div class="main-img-box">
-              <a class="image-box" data-fancybox="gallery" href="{{ asset("images/upload/$image->image") }}">
-                <img  src="{{ asset("images/upload/$image->image")}}" alt="">
-              </a>
-              <h3>{{ $image->image }}</h3>
-              <div class="img-buttons">
-                  <button class="delete-img" value="{{ $image->id }}"><i class="fas fa-trash-alt"></i></button>
-                  <button><i class="fas fa-cog"></i></button>
-              </div>
-          </div>
-        @endforeach
+            @foreach ($images as $image)
+                <?php $img = explode("-", $image->image);?>
+                <div class="main-img-box">
+                    <a class="image-box" data-fancybox="gallery" href="{{ asset("images/upload/$image->image") }}">
+                        <img  src="{{ asset("images/upload/$image->image")}}" alt="">
+                    </a>
+                    <h3>{{ $img[1] }}</h3>
+                    <div class="img-buttons">
+                        <button class="delete-img" value="{{ $image->id }}"><i class="fas fa-trash-alt"></i></button>
+                        <button><i class="fas fa-cog"></i></button>
+                    </div>
+                </div>
+            @endforeach
       </div>
     @endif
 

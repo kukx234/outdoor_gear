@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Http\Requests\CategoryRequest;
+use App\Models\CategoryImages;
 
 class CategoryController extends Controller
 {
@@ -16,10 +17,11 @@ class CategoryController extends Controller
 
     public function categoryDetails(Request $request)
     {
-        $category = Category::with(['product','subCategory'])->where('id', $request->id)->first();
+        $category = Category::with(['product','subCategory','categoryImages'])->where('id', $request->id)->first();
         return view('Admin.categories.category_details')->with('category', $category)
                                                         ->with('sub_categories', $category->subCategory)
-                                                        ->with('products', $category->product);
+                                                        ->with('products', $category->product)
+                                                        ->with('images', $category->categoryImages);
     }
 
     public function save(CategoryRequest $request)

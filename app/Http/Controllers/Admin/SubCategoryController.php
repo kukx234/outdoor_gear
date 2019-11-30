@@ -52,12 +52,13 @@ class SubCategoryController extends Controller
 
     public function details(Request $request)
     {
-        $sub_category = Sub_Category::with('product')->where('id', $request->id)->first();
+        $sub_category = Sub_Category::with('product','subCategoryImages')->where('id', $request->id)->first();
         $category = Category::where('id', $sub_category->categories_id)->first();
 
         return view('Admin.sub_categories.sub_category_details')->with('category', $category)
                                                                 ->with('sub_category', $sub_category)
-                                                                ->with('products', $sub_category->product);
+                                                                ->with('products', $sub_category->product)
+                                                                ->with('images', $sub_category->subCategoryImages);
     }
 
     public function edit(Request $request)

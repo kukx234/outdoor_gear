@@ -14,7 +14,7 @@
 
 Route::get('/', function () {
     return view('welcome');
-})->middleware('check_role');
+});
 
 Auth::routes();
 
@@ -59,5 +59,8 @@ Route::prefix('admin')->middleware(['auth', 'check_role'])->group(function ()
     Route::name('add-image')->get('addImage', 'Admin\HeaderImageController@showForm');
     Route::name('image-save')->post('ImageSave', 'Admin\HeaderImageController@addImage');
     Route::name('delete-Image')->post('deleteImage', 'Admin\HeaderImageController@deleteImage');
+
+    //Korisnici
+    Route::name('user-list')->get("users", "Admin\UserController@showList");
 
 });

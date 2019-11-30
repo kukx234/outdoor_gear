@@ -58,7 +58,7 @@ class ProductController extends Controller
 
     public function details(Request $request)
     {
-        $product = Product::where('id', $request->id)->first();
+        $product = Product::with('productImages')->where('id', $request->id)->first();
         $sub_category = Sub_Category::where('id', $product->sub_categories_id)->first();
 
         if($sub_category != null){
@@ -70,7 +70,8 @@ class ProductController extends Controller
 
         return view('Admin.products.product_details')->with('product', $product)
                                                      ->with('category', $category)
-                                                     ->with('sub_category', $sub_category);
+                                                     ->with('sub_category', $sub_category)
+                                                     ->with('images', $product->productImages);
     }
 
     public function editProduct(Request $request)

@@ -33,7 +33,6 @@ class ProductRequest extends FormRequest
             'description' => 'string|nullable',
             'price' => 'required|numeric',
             'discount' => 'nullable|numeric',
-            'sub_category_id' => Rule::requiredIf(!empty($category->subCategory[0]->id)),'|numeric',
         ];
     }
 }

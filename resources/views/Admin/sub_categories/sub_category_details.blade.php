@@ -5,6 +5,12 @@
 
 <h1>{{ $sub_category->title }}</h1>
 
+<div>
+    @foreach ($images as $image)
+        <img src="{{ asset("images/upload/$image->image")}}" alt="">
+    @endforeach
+</div>
+
     <div>
         <span> Kategorija: {{ $category->title }}</span>
     </div>

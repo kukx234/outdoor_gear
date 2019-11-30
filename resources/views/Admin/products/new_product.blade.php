@@ -16,7 +16,7 @@
 
         <label>Odabir kategorije</label>
         <select name="category_id" id="category-select">
-            <option value="" selected>Odaberi kategoriju...</option>
+            <option value="0" selected>Odaberi kategoriju...</option>
             @foreach ($categories as $category)
                 <option value="{{ $category->id }}">{{ $category->title }}</option>
             @endforeach

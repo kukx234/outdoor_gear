@@ -20,7 +20,7 @@ class Category extends Model
         return $this->hasMany('App\Models\Product', 'categories_id');
     }
 
-    public function subCategoryImages()
+    public function categoryImages()
     {
         return $this->hasMany('App\Models\CategoryImages', 'categories_id');
     }

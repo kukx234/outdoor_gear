@@ -4,6 +4,13 @@
     <h1>{{ $product->title }}</h1>
 
     <div>
+        @foreach ($images as $image)
+            <img src="{{ asset("images/upload/$image->image")}}" alt="">
+        @endforeach
+    </div>
+        
+
+    <div>
         <span>Kategorija : {{ $category->title }}</span>
         @if (!empty($sub_category))
             <span>Podkategorija: {{ $sub_category->title }}</span>

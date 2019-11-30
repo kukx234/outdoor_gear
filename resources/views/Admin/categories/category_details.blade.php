@@ -4,6 +4,12 @@
 <div class="category-list-form">
     <h1>{{ $category->title }}</h1>
 
+    <div>
+        @foreach ($images as $image)
+            <img src="{{ asset("images/upload/$image->image")}}" alt="">
+        @endforeach
+    </div>
+
     @if (!$sub_categories->isEmpty())
         <div class="sub-categories list-title">
             <div> 
