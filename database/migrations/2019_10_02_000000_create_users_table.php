@@ -23,6 +23,7 @@ class CreateUsersTable extends Migration
             $table->integer('post_code')->nullable();
             $table->string('password');
             $table->integer('role_id')->unsigned();
+            $table->integer('block')->nullable();
             $table->rememberToken();
             $table->timestamps();
 

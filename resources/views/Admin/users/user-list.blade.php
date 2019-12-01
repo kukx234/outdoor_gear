@@ -5,9 +5,10 @@
             <table>
                 <thead>
                     <tr>
-                        <td>Ime</td>
-                        <td>Email</td>
-                        <td>Kreiran</td>
+                        <th>Ime</th>
+                        <th>Email</th>
+                        <th>Kreiran</th>
+                        <th>Akcije</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -16,6 +17,7 @@
                             <td>{{ $user->name }}</td>
                             <td>{{ $user->email }}</td>
                             <td>{{ $user->created_at }}</td>
+                            <td><a href="{{ route('user-block', $user->id ) }}">Blokiraj</a></td>
                         </tr>
                     @endforeach
                 </tbody>
