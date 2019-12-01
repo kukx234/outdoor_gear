@@ -17,7 +17,11 @@
                             <td>{{ $user->name }}</td>
                             <td>{{ $user->email }}</td>
                             <td>{{ $user->created_at }}</td>
-                            <td><a href="{{ route('user-block', $user->id ) }}">Blokiraj</a></td>
+                            @if ($user->block == "1")
+                                <td><a href="{{ route('user-block',['id' => $user->id, 'block' => 0 ]) }}">Odblokiraj</a></td>
+                            @else
+                                <td><a href="{{ route('user-block',['id' => $user->id, 'block' => 1 ]) }}">Blokiraj</a></td>
+                            @endif
                         </tr>
                     @endforeach
                 </tbody>

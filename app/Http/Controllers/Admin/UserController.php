@@ -18,7 +18,7 @@ class UserController extends Controller
     public function userBlock(Request $request)
     {
         User::where('id', $request->id)->update([
-            'block' => '1',
+            'block' => $request->block,
         ]);
 
         return redirect()->back()->with("Success", "korisnik blokiran");

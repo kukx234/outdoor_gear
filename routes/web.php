@@ -62,5 +62,5 @@ Route::prefix('admin')->middleware(['auth', 'check_role'])->group(function ()
 
     //Korisnici
     Route::name('user-list')->get("users", "Admin\UserController@showList");
-    Route::name('user-block')->get('user-block/{id}', "Admin\UserController@userBlock");
+    Route::name('user-block')->get('user-block/{id}/{block}', "Admin\UserController@userBlock");
 });
