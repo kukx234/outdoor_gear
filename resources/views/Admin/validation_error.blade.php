@@ -3,8 +3,8 @@
         <ul>
             @foreach ($errors->all() as $error)
                <li>
-                    <i class="fas fa-exclamation-triangle"></i>
-                   {{ $error }}
+                    <i class="fas fa-exclamation-triangle"> {{ $error }}</i>
+                   
                 </li>
             @endforeach
         </ul>

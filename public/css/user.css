@@ -1,0 +1,14 @@
+.user-table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    color:#fff;
+    font-size: 18px;
+}
+
+.user-table thead {
+    border-bottom: 1px solid #ffcc00;
+}
+
+.user-table td {
+    padding: 8px 35px;
+}

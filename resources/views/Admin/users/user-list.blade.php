@@ -1,8 +1,8 @@
 @extends('layouts.adminnav')
 
 @section('content')
-        <div>
-            <table>
+        <div class="category-list-form">
+            <table class="user-table">
                 <thead>
                     <tr>
                         <th>Ime</th>

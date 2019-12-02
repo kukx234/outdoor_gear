@@ -33,6 +33,8 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/success.css') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('js/fancybox-master/dist/jquery.fancybox.min.css') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/show-images.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/user.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/animate.css') }}"/>
 </head>
 <body>
 

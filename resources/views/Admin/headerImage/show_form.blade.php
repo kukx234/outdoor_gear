@@ -39,7 +39,7 @@
       <div class="images-list">
             @foreach ($images as $image)
                 <?php $img = explode("-", $image->image);?>
-                <div class="main-img-box">
+                <div class="main-img-box animated">
                     <a class="image-box" data-fancybox="gallery" href="{{ asset("images/upload/$image->image") }}">
                         <img  src="{{ asset("images/upload/$image->image")}}" alt="">
                     </a>
@@ -80,7 +80,10 @@
                 url: 'deleteImage',
                 data: { image_id : img_id, model: model_name[0]},
                 success: function(){
-                    $(".remove").remove();
+                    $(".remove").addClass("bounceOutRight");
+                    setTimeout(function(){
+                        $(".remove").hide("slow");
+                    },600);
                 }
             });
         });
