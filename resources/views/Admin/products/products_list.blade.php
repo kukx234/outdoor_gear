@@ -10,7 +10,7 @@
 
     <h1>Produkti</h1>
 
-    <div>
+    <div class="icon-plus">
       <a class="new-category-btn" href="{{ route('new_product') }}">
         <i class="fas fa-plus"></i>
         <span>Novi produkt</span>

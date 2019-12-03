@@ -449,6 +449,30 @@ h1 {
   background-color: #000;
 }
 
+.category-name {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+  justify-content: space-between;
+}
+
+.category-name h2 {
+  margin: 0;
+  padding-right: 15px;
+  font-size: 19px;
+}
+
+.category-name span {
+  background-color: #fff;
+  padding: 5px 15px;
+  width: 100%;
+  border-radius: 14px;
+  max-width: 550px;
+}
+
+.icon-plus {
+  margin-bottom: 40px;
+}
 
 
 

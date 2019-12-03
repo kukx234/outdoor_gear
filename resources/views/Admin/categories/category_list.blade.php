@@ -11,7 +11,7 @@
 
     <h1>Kategorije</h1>
 
-    <div>
+    <div class="icon-plus">
         <a class="new-category-btn" href="{{ route("new-category") }}" >
           <i class="fas fa-plus"></i>
           <span>Nova kategorija</span>

@@ -49,11 +49,13 @@
                     </ul>
                 </div>
             @endif
-            <div class="list-buttons detail-btns">
+
+            <div class="list-buttons detail-btns"> 
                 <a class="makeup onhover" href="{{ route('category_edit', $category->id) }}">Uredi</a>
                 <!--<button class="delete onhover" onclick="popupAlert('categoriesdelete',{{ $category->id }})">Obriši</button>-->
                 <button onclick="goBack()"><i class="fas fa-arrow-circle-left"></i></button>
             </div>
+            
         </div>
     </div>
     

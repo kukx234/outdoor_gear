@@ -11,7 +11,7 @@
 
     <h1>Podkategorije</h1>
 
-    <div>
+    <div class="icon-plus">
       <a class="new-category-btn" href="{{ route('new_sub_category') }}">
         <i class="fas fa-plus"></i>
         <span>Nova podkategorija</span>
