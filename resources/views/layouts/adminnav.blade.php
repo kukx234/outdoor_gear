@@ -35,6 +35,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/show-images.css') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/user.css') }}"/>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/animate.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/edit-products.css') }}"/>
 </head>
 <body>
 

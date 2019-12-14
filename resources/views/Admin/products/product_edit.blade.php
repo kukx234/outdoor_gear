@@ -3,23 +3,30 @@
 @section('content')
     
 @include('Admin.validation_error')
-    <h1>Uredi produkt</h1>
 
-    <form action="{{ route("product_edit_save", $product->id ) }}" method="POST">
+<div class="form-container1">
+
+    
+     
+
+    <form class="form-list1" action="{{ route("product_edit_save", $product->id ) }}" method="POST">
         @csrf
+
+        <h2>Uredi produkt</h2>
 
         <label for="title">Naziv produkta</label>
         <input type="text" name="title" id="title" value="{{ $product->title }}">
 
         <label for="">Odabir kategorije</label>
-        <select name="category_id" id="category-select">
-            @foreach ($categories as $category)
-                @if ($product->categories_id === $category->id )
-                    <option value="{{ $category->id }}" selected>{{ $category->title }}</option>
-                @else
-                    <option value="{{ $category->id }}">{{ $category->title }}</option>
-                @endif
-            @endforeach
+        <select class="select-dropdown" name="category_id" id="category-select">
+                @foreach ($categories as $category)
+                    @if ($product->categories_id === $category->id )
+                        <option value="{{ $category->id }}" selected>{{ $category->title }}</option>
+                    @else
+                        <option value="{{ $category->id }}">{{ $category->title }}</option>
+                    @endif
+                @endforeach
+
         </select>
 
             <label for="" class="sub-lab">Odabir podkategorije</label>
@@ -46,10 +53,13 @@
         <label for="discount">Popust</label>
         <input type="number" name="discount" id="discount" value="{{ $product->discount }}">
 
-        <button type="submit" >Spremi</button>
-        <a onclick="goBack()" class="test">Odustani</a>
-        
+        <div class="btns2">
+            <button type="submit" >Spremi</button>
+            <a onclick="goBack()" class="test">Odustani</a>
+        </div>
     </form>
+
+</div>
 
     <script>
 
@@ -72,6 +82,7 @@
                  })
              });
     </script>
+
 
 @endsection
 
