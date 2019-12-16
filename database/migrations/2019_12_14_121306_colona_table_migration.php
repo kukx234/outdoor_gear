@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class ProductsActionsTableMigration extends Migration
+class ColonaTableMigration extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class ProductsActionsTableMigration extends Migration
      */
     public function up()
     {
-        Schema::create('product_actions', function (Blueprint $table) {
+        Schema::create('colona', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('discount');
+            $table->integer('colona');
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ class ProductsActionsTableMigration extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('product_actions');
+        Schema::dropIfExists('colona');
     }
 }

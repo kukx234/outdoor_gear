@@ -25,4 +25,8 @@ class Category extends Model
         return $this->hasMany('App\Models\CategoryImages', 'categories_id');
     }
 
+    public function colones()
+    {
+        return $this->belongsToMany('App\Models\Colone','category_colona','category_id','colona_id');
+    }
 }

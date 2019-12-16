@@ -5,13 +5,45 @@
     <h1>{{ $category->title }}</h1>
 
     <div class="image-list-cont">
-        <div class="img-cont">
-            @foreach ($images as $image)
-                <img src="{{ asset("images/upload/$image->image")}}" alt="">
-            @endforeach
-        </div>
+        @if (!$images->isEmpty())
+            <div class="img-cont">
+                @foreach ($images as $image)
+                    <img src="{{ asset("images/upload/$image->image")}}" alt="">
+                @endforeach
+            </div>
+        @endif
 
         <div class="pro-subcat">
+            <div class="kolone">
+                <p>Kolone:</p>
+                <a class="new-kolona">
+                    <i class="fas fa-plus"></i>
+                    <!--<span>Nova kategorija</span>-->
+                </a>
+               @if (!empty($active_colones))
+                   @foreach ($active_colones as $colona)
+                       <p class="kolona-{{ $colona->colona }}">{{ $colona->colona }}</p>
+                   @endforeach
+               @endif
+            </div>
+            <div class="add-kolona-div">
+                <div class="add-kolona">
+                    <h3>Naslov</h3>
+                    <form action="{{ route('save-kolona', $category->id) }}" method="POST">
+                        @csrf
+                        <select name="kolone[]" id="" class="kolona-select" multiple>
+                            <option value="0">Odaberi kolonu...</option>
+                            @foreach ($kolone as $kolona)
+                                <option value="{{ $kolona->id }}">Kolona {{ $kolona->colona }}</option>
+                            @endforeach
+                        </select>
+                        <div class="buttons kol">
+                            <button class="btn-save" type="submit">Spremi</button>
+                            <button class="btn-quit">Odustani</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
             @if (!$sub_categories->isEmpty())
                 <div class="sub-categories list-title">
                     <div> 
@@ -60,5 +92,17 @@
     </div>
     
 </div>
+
+<script>
+    $('.new-kolona').click(function(){
+        $('.add-kolona-div').addClass('show-add-kolona');
+    });
+    $('.add-kolona-div').click(function(e){
+        $('.add-kolona-div').removeClass('show-add-kolona');
+    });
+    $('.add-kolona').click(function(e){
+        e.stopPropagation();
+    });
+</script>
 
 @endsection

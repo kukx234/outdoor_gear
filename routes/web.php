@@ -63,4 +63,7 @@ Route::prefix('admin')->middleware(['auth', 'check_role'])->group(function ()
     //Korisnici
     Route::name('user-list')->get("users", "Admin\UserController@showList");
     Route::name('user-block')->get('user-block/{id}/{block}', "Admin\UserController@userBlock");
+
+    //Kolone
+    Route::name('save-kolona')->post('kolone/{id}', "Admin\ColoneController@saveKolona");
 });
