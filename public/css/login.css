@@ -1,7 +1,5 @@
 .container {
-    display: flex;
-    justify-content: center;
-    margin-top: 100px;
+   
 }
 
 .form {
@@ -40,6 +38,7 @@
     background-color: #262626;
     border-radius: 4%;
     width: 400px;
+    margin: 150px auto;
 }
 
 .btn {

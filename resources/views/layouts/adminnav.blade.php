@@ -79,7 +79,7 @@
                 <li class="cat"><a href="{{ route('category_list') }}">Kategorije</a></li>
                 <li class="subcat"><a href="{{ route('sub_category_list') }}">Podkategorije</a></li>
                 <li class="product"><a href="{{ route('products_list') }}">Produkti</a></li>
-                <li class="header" ><a href="{{ route('add-image') }}?header">Slike naslovnice</a></li>
+                <li class="header" ><a href="{{ route('add-image') }}?header=1">Slike naslovnice</a></li>
                 <li class="users"><a href="{{ route('user-list') }}">Korisnici</a></li>
             </ul>
         </nav>

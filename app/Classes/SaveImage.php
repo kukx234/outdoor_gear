@@ -41,47 +41,42 @@ class SaveImage
     public static function saveImageToDatabase($image, $parameters)
     {
         $image_name = time()."-".$image->getClientOriginalName();
-        $model = "header";
-        if(count($parameters) > 1){
-            $parameter = explode("=", $parameters[1]);
-            $model = $parameter[0];
-            $id = $parameter[1];
-        }
         
-        if($model == "category_id"){
-    
+        if($parameters['model'] == "category_id"){
             CategoryImages::insert([
                 'image' => $image_name,
-                'categories_id' => $id,
+                'categories_id' => $parameters['id'],
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
             ]);
 
-            return CategoryImages::where('categories_id', $id)->get();
+            return CategoryImages::where('categories_id', $parameters['id'])->get();
         }
-        elseif($model == "subcategory_id"){
+        elseif($parameters['model'] == "subcategory_id"){
             SubCategoryImages::insert([
                 'image' => $image_name,
-                'sub_categories_id' => $id,
+                'sub_categories_id' => $parameters['id'],
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
             ]);
 
-            return SubCategoryImages::where('sub_categories_id', $id)->get();
+            return SubCategoryImages::where('sub_categories_id', $parameters['id'])->get();
         }
-        elseif($model == "product_id"){
+        elseif($parameters['model'] == "product_id"){
             ProductImages::insert([
                 'image' => $image_name,
-                'product_id' => $id,
+                'product_id' => $parameters['id'],
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
             ]);
 
-            return ProductImages::where('product_id', $id)->get();
+            return ProductImages::where('product_id', $parameters['id'])->get();
         }
         else {
             HeaderImage::insert([
                 'image' => $image_name,
+                'title' => $parameters['title'],
+                'description' => $parameters['description'],
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
             ]);

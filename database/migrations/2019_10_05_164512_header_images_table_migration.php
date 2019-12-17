@@ -16,6 +16,8 @@ class HeaderImagesTableMigration extends Migration
         Schema::create('header_images', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('image');
+            $table->string('title')->nullable();
+            $table->string('description')->nullable();
             $table->timestamps();
         });
     }

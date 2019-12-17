@@ -25,11 +25,19 @@
                     <button type="button" name="button">Odaberi</button>
                 </div>
             </div>
+
+            @if (Request::get('header'))
+                <label for="title">Naslov</label>
+                <input type="text" name="title" id="title">
+
+                <label for="description">Opis</label>
+                <textarea name="description" id="description" cols="30" rows="10"></textarea>
+            @endif
+    
             <div class="image-buttons">
               <button class="btn-save" type="submit">Spremi</button>
               <a class="btn-back" onclick="goBack()">Nazad</a>
             </div>
-
           </div>
         </form>
 
