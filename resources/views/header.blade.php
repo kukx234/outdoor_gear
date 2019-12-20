@@ -1,6 +1,6 @@
 <?php 
     use App\Http\Controllers\MainController; 
-    $head_categories = MainController::colonaPosition(2);
+    $head_categories = MainController::colonaPosition(1);
 ?>
 
 @foreach ($head_categories as $cat)

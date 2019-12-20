@@ -30,9 +30,9 @@
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                <!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
-                </button>
+                </button>-->
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
@@ -64,6 +64,8 @@
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
+                                    <a href="">Jos jedan link</a>
+                                    <a href="">I jos jedan</a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
@@ -71,13 +73,12 @@
                                 </div>
                             </li>
                         @endguest
-                    </ul>
-
-                    @if (Auth::check())
-                        @if (Auth::user()->role->role === "Admin")
-                            <a href="{{ route('admin-home') }}">Administracija</a>
+                        @if (Auth::check())
+                            @if (Auth::user()->role->role === "Admin")
+                                <li><a href="{{ route('admin-home') }}">Administracija</a></li>
+                            @endif
                         @endif
-                    @endif
+                    </ul>
                 </div>
             </div>
         </nav>
