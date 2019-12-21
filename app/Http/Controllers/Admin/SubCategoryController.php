@@ -43,10 +43,10 @@ class SubCategoryController extends Controller
     }
 
     public function delete(Request $request)
-    {
+    {   
         Sub_Category::where('id', $request->id)->delete();
         return response()->json([
-          'success' => 'Record deleted successfully!'
+          'success' => 'sub'
         ]);
     }
 

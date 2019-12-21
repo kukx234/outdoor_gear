@@ -28,12 +28,13 @@
                       <i class="fas fa-images"></i>
                       <span>dodaj sliku</span>
                     </a>
+                    <a data-route="categoriesdelete" data-id="{{ $category->id }}" class="delete">
+                      <i class="fas fa-trash"></i>
+                    </a>
                   </div>
             </li>
         @endforeach
     </ul>
     </div>
 </div>
-  @include('Admin.popup_warning')
-
 @endsection

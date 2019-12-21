@@ -49,14 +49,19 @@
                     <div> 
                         <h3>Podkategorije</h3> 
                         <div class="span-count">
-                            <span>{{ count($sub_categories) }}</span>
+                            <span class="subc">{{ count($sub_categories) }}</span>
                         </div>
                     </div>
                     <ul>
                         @foreach ($sub_categories as $sub_category)
                             <li>
                                 {{ $sub_category->title }}
-                                <a class="details onhover" href="{{ route('sub_category_details', $sub_category->id) }}">Detalji</a>
+                                <div>
+                                    <a class="details onhover" href="{{ route('sub_category_details', $sub_category->id) }}">Detalji</a>
+                                    <a data-route="{{ asset('admin/deletesubcategory') }}" data-id="{{ $sub_category->id }}" class="delete">
+                                        <i class="fas fa-trash"></i>
+                                    </a>
+                                </div>
                             </li>
                         @endforeach
                     </ul>
@@ -68,14 +73,19 @@
                     <div>
                         <h3>Produkti</h3>
                         <div class="span-count">
-                            <span>{{ count($products) }} </span>
+                            <span class="prodc">{{ count($products) }} </span>
                         </div>
                     </div>
                     <ul>
                         @foreach ($products as $product)
                             <li>
                                 {{ $product->title }}
-                                <a class="details onhover" href="{{ route('product_details', $product->id) }}">Detalji</a>
+                                <div>
+                                    <a class="details onhover" href="{{ route('product_details', $product->id) }}">Detalji</a>
+                                    <a data-route="{{ asset('admin/productDelete') }}" data-id="{{ $product->id }}" class="delete">
+                                        <i class="fas fa-trash"></i>
+                                    </a>
+                                </div>
                             </li>
                         @endforeach
                     </ul>

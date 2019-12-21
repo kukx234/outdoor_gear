@@ -28,6 +28,9 @@
                            <i class="fas fa-images"></i>
                            <span>Dodaj sliku</span>
                         </a>
+                        <a data-route="productDelete" data-id="{{ $product->id }}" class="delete">
+                          <i class="fas fa-trash"></i>
+                        </a>
                     </div>
                 </li>
             @endforeach
@@ -35,6 +38,4 @@
     @endif
   </div>
 </div>
-    @include('Admin.popup_warning')
-
 @endsection

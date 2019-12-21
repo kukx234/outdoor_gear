@@ -54,6 +54,9 @@ class ProductController extends Controller
     public function delete(Request $request)
     {
         Product::where('id', $request->id)->delete();
+        return response()->json([
+            'success' => 'prod'
+          ]);
     }
 
     public function details(Request $request)

@@ -26,14 +26,19 @@
                     <div>
                         <h3>Produkti</h3>
                         <div class="span-count">
-                            <span> {{ count($products) }}</span>
+                            <span class="prodc"> {{ count($products) }}</span>
                         </div>
                     </div>
                     <ul>
                         @foreach ($products as $product)
                             <li>
                                 {{ $product->title }}
-                                <a class="details onhover" href="{{ route('product_details', $product->id) }}">Detalji</a>
+                                <div>
+                                    <a class="details onhover" href="{{ route('product_details', $product->id) }}">Detalji</a>
+                                <a data-route="{{ asset('/admin/productDelete')}}" data-id="{{ $product->id }}" class="delete">
+                                        <i class="fas fa-trash"></i>
+                                    </a>    
+                                </div>
                             </li>
                         @endforeach
                     </ul>
@@ -45,8 +50,6 @@
                 <!---<a class="delete onhover" onclick="popupAlert('deletesubcategory',{{ $sub_category->id }})">Obriši</a>-->
                 <button onclick="goBack()"><i class="fas fa-arrow-circle-left"></i></button>
             </div>
-
-            @include('Admin.popup_warning')
         </div>
     </div>
 </div>

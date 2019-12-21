@@ -87,6 +87,7 @@
 
     <main class="py-4">
         @yield('content')
+        @include('Admin.popup_warning')
     </main>
 
     <script>

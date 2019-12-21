@@ -9,7 +9,7 @@ class MainController extends Controller
 {
     public static function colonaPosition($position)
     {
-        $categories = Category::with('subCategory')->whereHas('colones', function($q) use($position){
+        $categories = Category::with('subCategory','product')->whereHas('colones', function($q) use($position){
             $q->where('colona',$position);
         })->get();
         
