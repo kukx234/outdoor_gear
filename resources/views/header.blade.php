@@ -2,21 +2,27 @@
     use App\Http\Controllers\MainController; 
     $head_categories = MainController::colonaPosition(1);
 ?>
-<ul>
-    @foreach ($head_categories as $cat)
-        @if (count($cat->subCategory) > 0)
-            <li>
-                {{ $cat->title }}
-                <ul>
-                    @foreach ($cat->subCategory as $subcategory)
-                        <li>{{ $subcategory->title }}</li>
-                    @endforeach
-                </ul>
-            </li>
-        @else
-            <li>
-                {{ $cat->title }}
-            </li>
-        @endif
-    @endforeach
-</ul>
+<section class="sec-navbar-section">
+    <div class="sec-nav-cont">
+        <a href="{{ asset("/") }}"><img  class="nav-logo" src="{{ asset('images/somrerologo.png') }}" alt=""></a>
+        <div class="navbar-k">
+            @foreach ($head_categories as $cat)
+                @if (count($cat->subCategory) > 0)
+                    <div class="hasSub">
+                        {{ $cat->title }}
+                        <i class="fas fa-angle-down"></i>
+                        <div class="subnavbar">
+                            @foreach ($cat->subCategory as $subcategory)
+                                <a href="">{{ $subcategory->title }}</a>
+                            @endforeach
+                        </div>
+                    </div>
+                @else
+                    <a>
+                        {{ $cat->title }}
+                    </a>
+                @endif
+            @endforeach
+        </div>
+    </div>
+</section>
