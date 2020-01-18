@@ -16,6 +16,7 @@
     </script>
     <script src="{{ asset('js/slick/slick.js') }}"></script>
     <script src="{{ asset('js/slickanimate.js') }}"></script>
+    <script src="{{ asset('js/aos-master/dist/aos.js') }}"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -28,6 +29,7 @@
     <link rel="stylesheet" href="{{ asset('css/mainslider.css') }}">
     <link rel="stylesheet" href="{{ asset('js/slick/slick.css') }}">
     <link rel="stylesheet" href="{{ asset('css/animate.css') }}">
+    <link rel="stylesheet" href="{{ asset('js/aos-master/dist/aos.css') }}">
 </head>
 <body>
     <div id="app">

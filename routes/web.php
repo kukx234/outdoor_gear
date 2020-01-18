@@ -19,6 +19,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::name('viewProduct')->get('products/{id}', 'ProductsController@viewProduct');
+Route::name('productsList')->get('productslist/{cat_id}', 'ProductsController@productsList');
 
 
 //Admin stranice

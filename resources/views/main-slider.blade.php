@@ -8,24 +8,25 @@ $header_images = MainSliderController::mainSlider();
         <div class="img-container">
             <img src="{{asset("images/upload/$header_image->image")}}" alt="">
             <div class="slider-text">
-                <h1 data-animation-in="fadeInDown">{{ $header_image->title }}</h1>
-                <p data-animation-in="fadeInDown" data-delay-in="1">{{ $header_image->description }}</p>
-                <a data-animation-in="fadeInDownBig" data-delay-in="1.5"class="more-btn">SAZNAJ VIŠE</a>
+                <h1 data-animation-in="rotateInUpLeft">{{ $header_image->title }}</h1>
+                <p data-animation-in="rotateInUpLeft" data-delay-in="1">{{ $header_image->description }}</p>
+                <a data-animation-in="rotateInUpLeft" data-delay-in="1.5" class="more-btn">SAZNAJ VIŠE</a>
             </div>
+            <img class="png-overlay"src="{{ asset("images/testna.png") }}" alt="">
         </div>
     @endforeach
 </section>
 
 <script>
-   $('.main-slider').slick({
-        dots: false,
-        infinite: true,
-        arrows:false,
-        fade:true,
-        speed: 800,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 8000,
-    }).slickAnimation();
+$('.main-slider').slick({
+    arrows:false,
+    dots:true,
+    fade:true,
+    infinite:true,
+    customPaging : function(slider, i) {
+        return '<i class="far fa-circle"></i>';
+    },
+  
+}).slickAnimation();
+
 </script>
