@@ -28,4 +28,19 @@
             @endforeach
         </div>
     </div>
+
+    <script>
+        $(window).scroll(function(){
+            if($(window).scrollTop() >= $(".sec-navbar-section").offset().top) {
+                var margin = $(".sec-navbar-section").outerHeight();
+                $(".sec-navbar-section").addClass("sticky-nav");
+                $(".navbar-light").css("margin-bottom", margin);
+            }
+            
+            if($(window).scrollTop() < $(".navbar-light").outerHeight()){
+                $(".sec-navbar-section").removeClass("sticky-nav");
+                $(".navbar-light").css("margin-bottom", 0);
+            }
+        });
+    </script>
 </section>

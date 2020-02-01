@@ -6,4 +6,5 @@
     @include('firstsection')
     @include('actions_section')
     @include('customer_reviews')
+    @include('delivery_info')
 @endsection
